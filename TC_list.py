@@ -16,4 +16,17 @@ if 10 in numbers:
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print(matrix[1][2])
 
-print(names.reverse())
+names.reverse()
+print(names)
+
+names.append("Aditya")
+print(names)
+
+names.extend(["Sita", "Gita"])
+print(names)
+
+names.remove("Sita")
+print(names)
+
+names.insert(2, "Ravi")
+print(names)
