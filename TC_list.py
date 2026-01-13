@@ -9,9 +9,11 @@ print(mixed)
 
 for i in numbers:
     print(i)
-    
+
 if 10 in numbers:
     print("Found")
-    
+
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print(matrix[1][2])
+
+print(names.reverse())
