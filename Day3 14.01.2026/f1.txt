@@ -1,0 +1,6 @@
+welcome to the world of coding
+hope you have a great time here
+lets learn pythonThis is my write example
+lets learn python
+This is my write example
+New line added with r+ mode
