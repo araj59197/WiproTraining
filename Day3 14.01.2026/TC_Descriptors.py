@@ -1,4 +1,4 @@
-#Descriptor: A descriptor is a special type of object in Python that customizes the behavior of attribute access.
+# Descriptor: A descriptor is a special type of object in Python that customizes the behavior of attribute access.
 # It allows you to define how attributes are retrieved, set, or deleted in a class.
 class mydescriptor:
     def __get__(self, object, owner):
