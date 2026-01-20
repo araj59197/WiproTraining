@@ -1,0 +1,257 @@
+```python
+
+import re
+
+```
+ 
+---
+ 
+## 2. Basic Regex Functions in Python
+ 
+| Function        | Description                      |
+
+| --------------- | -------------------------------- |
+
+| `re.match()`    | Matches pattern at the beginning |
+
+| `re.search()`   | Searches pattern anywhere        |
+
+| `re.findall()`  | Returns all matches              |
+
+| `re.finditer()` | Returns iterator of matches      |
+
+| `re.sub()`      | Replaces matched text            |
+
+| `re.split()`    | Splits string by pattern         |
+ 
+---
+ 
+## 3. Common Regex Patterns (Very Important)
+ 
+### 🔹 Character Patterns
+ 
+| Pattern | Meaning                      | Example |
+
+| ------- | ---------------------------- | ------- |
+
+| `.`     | Any character except newline | `a.b`   |
+
+| `\d`    | Digit (0–9)                  | `\d\d`  |
+
+| `\D`    | Non-digit                    | `\D`    |
+
+| `\w`    | Alphanumeric + underscore    | `\w+`   |
+
+| `\W`    | Non-alphanumeric             | `\W`    |
+
+| `\s`    | Whitespace                   | `\s+`   |
+
+| `\S`    | Non-whitespace               | `\S+`   |
+ 
+---
+ 
+### 🔹 Quantifiers
+ 
+| Pattern | Meaning               |
+
+| ------- | --------------------- |
+
+| `*`     | 0 or more             |
+
+| `+`     | 1 or more             |
+
+| `?`     | 0 or 1                |
+
+| `{n}`   | Exactly n times       |
+
+| `{n,}`  | n or more times       |
+
+| `{n,m}` | Between n and m times |
+ 
+**Example**
+ 
+```python
+
+re.findall(r"\d+", "Price 100, discount 20")
+
+# Output: ['100', '20']
+
+```
+ 
+---
+ 
+### 🔹 Anchors
+ 
+| Pattern | Meaning             |
+
+| ------- | ------------------- |
+
+| `^`     | Start of string     |
+
+| `$`     | End of string       |
+
+| `\b`    | Word boundary       |
+
+| `\B`    | Not a word boundary |
+ 
+**Example**
+ 
+```python
+
+re.search(r"^Hello", "Hello World")  # Match
+
+```
+ 
+---
+ 
+### 🔹 Character Sets
+ 
+| Pattern  | Meaning               |
+
+| -------- | --------------------- |
+
+| `[abc]`  | a or b or c           |
+
+| `[a-z]`  | lowercase letters     |
+
+| `[A-Z]`  | uppercase letters     |
+
+| `[0-9]`  | digits                |
+
+| `[^a-z]` | NOT lowercase letters |
+ 
+**Example**
+ 
+```python
+
+re.findall(r"[A-Z]", "Python3")
+
+# Output: ['P']
+
+```
+ 
+---
+ 
+## 4. Grouping & Alternation
+ 
+### 🔹 Groups `( )`
+ 
+```python
+
+match = re.search(r"(\d{4})-(\d{2})-(\d{2})", "2026-01-20")
+
+print(match.groups())
+
+# Output: ('2026', '01', '20')
+
+```
+ 
+### 🔹 OR Operator `|`
+ 
+```python
+
+re.findall(r"cat|dog", "cat and dog")
+
+# Output: ['cat', 'dog']
+
+```
+ 
+---
+ 
+## 5. Lookahead & Lookbehind (Advanced)
+ 
+| Pattern    | Meaning             |
+
+| ---------- | ------------------- |
+
+| `(?=...)`  | Positive lookahead  |
+
+| `(?!...)`  | Negative lookahead  |
+
+| `(?<=...)` | Positive lookbehind |
+
+| `(?<!...)` | Negative lookbehind |
+ 
+**Example**
+ 
+```python
+
+re.findall(r"\d+(?=₹)", "100₹ 200$")
+
+# Output: ['100']
+
+```
+ 
+---
+ 
+## 6. Flags in Regex
+ 
+| Flag   | Description         |
+
+| ------ | ------------------- |
+
+| `re.I` | Ignore case         |
+
+| `re.M` | Multiline           |
+
+| `re.S` | Dot matches newline |
+
+| `re.X` | Verbose mode        |
+ 
+```python
+
+re.search(r"python", "PYTHON", re.I)
+
+```
+ 
+---
+ 
+## 7. Common Real-World Regex Patterns
+ 
+### ✅ Email Validation
+ 
+```python
+
+pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+
+```
+ 
+### ✅ Mobile Number (India)
+ 
+```python
+
+pattern = r"^[6-9]\d{9}$"
+
+```
+ 
+### ✅ Password (Min 8 chars, 1 digit, 1 special char)
+ 
+```python
+
+pattern = r"^(?=.*\d)(?=.*[@#$!%*?&]).{8,}$"
+
+```
+ 
+---
+ 
+## 8. Example Program
+ 
+```python
+
+import re
+ 
+text = "My email is test123@gmail.com"
+
+pattern = r"[\w\.-]+@[\w\.-]+\.\w+"
+ 
+match = re.search(pattern, text)
+
+if match:
+
+    print("Email found:", match.group())
+
+```
+ 
+---
+ 
+ 
