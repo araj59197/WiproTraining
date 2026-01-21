@@ -17,7 +17,6 @@ import abc
 import json
 import csv
 
-# --- 10. Descriptors ---
 class GradeDescriptor:
     """Validates that marks are between 0 and 100."""
     def __init__(self, name):
@@ -90,7 +89,7 @@ class Student(Person):
     def __init__(self, p_id, name, department, semester, marks):
         super().__init__(p_id, name, department)
         self.semester = semester
-        self.marks = marks # Triggers descriptor validation
+        self.marks = marks 
 
     # --- 8. Polymorphism (Method Overriding) ---
     @log_execution
@@ -126,7 +125,7 @@ class Faculty(Person):
     salary = SalaryDescriptor("salary") # Descriptor usage
 
     def __init__(self, p_id, name, department, salary):
-        super().__init__(p_id, name, department)
+        super().__init__(p_id, name, department) # Call base class constructor
         self.is_admin_access = True # Flag to allow salary descriptor access
         self.salary = salary
 
