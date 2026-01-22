@@ -1,0 +1,408 @@
+{
+  "url": "https://en.wikipedia.org/wiki/Web_scraping",
+  "scraped_at": "2026-01-22T16:22:16.482198",
+  "title": "Web scraping - Wikipedia",
+  "links": [
+    {
+      "text": "Jump to content",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#bodyContent",
+      "is_external": false
+    },
+    {
+      "text": "Main page",
+      "href": "https://en.wikipedia.org/wiki/Main_Page",
+      "is_external": false
+    },
+    {
+      "text": "Contents",
+      "href": "https://en.wikipedia.org/wiki/Wikipedia:Contents",
+      "is_external": false
+    },
+    {
+      "text": "Current events",
+      "href": "https://en.wikipedia.org/wiki/Portal:Current_events",
+      "is_external": false
+    },
+    {
+      "text": "Random article",
+      "href": "https://en.wikipedia.org/wiki/Special:Random",
+      "is_external": false
+    },
+    {
+      "text": "About Wikipedia",
+      "href": "https://en.wikipedia.org/wiki/Wikipedia:About",
+      "is_external": false
+    },
+    {
+      "text": "Contact us",
+      "href": "https://en.wikipedia.org/wiki/Wikipedia:Contact_us",
+      "is_external": false
+    },
+    {
+      "text": "Help",
+      "href": "https://en.wikipedia.org/wiki/Help:Contents",
+      "is_external": false
+    },
+    {
+      "text": "Learn to edit",
+      "href": "https://en.wikipedia.org/wiki/Help:Introduction",
+      "is_external": false
+    },
+    {
+      "text": "Community portal",
+      "href": "https://en.wikipedia.org/wiki/Wikipedia:Community_portal",
+      "is_external": false
+    },
+    {
+      "text": "Recent changes",
+      "href": "https://en.wikipedia.org/wiki/Special:RecentChanges",
+      "is_external": false
+    },
+    {
+      "text": "Upload file",
+      "href": "https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard",
+      "is_external": false
+    },
+    {
+      "text": "Special pages",
+      "href": "https://en.wikipedia.org/wiki/Special:SpecialPages",
+      "is_external": false
+    },
+    {
+      "text": "No text",
+      "href": "https://en.wikipedia.org/wiki/Main_Page",
+      "is_external": false
+    },
+    {
+      "text": "Search",
+      "href": "https://en.wikipedia.org/wiki/Special:Search",
+      "is_external": false
+    },
+    {
+      "text": "Donate",
+      "href": "https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en",
+      "is_external": true
+    },
+    {
+      "text": "Create account",
+      "href": "https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Web+scraping",
+      "is_external": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Web+scraping",
+      "is_external": false
+    },
+    {
+      "text": "Donate",
+      "href": "https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en",
+      "is_external": true
+    },
+    {
+      "text": "Create account",
+      "href": "https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&returnto=Web+scraping",
+      "is_external": false
+    },
+    {
+      "text": "Log in",
+      "href": "https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Web+scraping",
+      "is_external": false
+    },
+    {
+      "text": "(Top)",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping",
+      "is_external": false
+    },
+    {
+      "text": "1\nHistory",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#History",
+      "is_external": false
+    },
+    {
+      "text": "2\nTechniques",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#Techniques",
+      "is_external": false
+    },
+    {
+      "text": "2.1\nHuman copy-and-paste",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#Human_copy-and-paste",
+      "is_external": false
+    },
+    {
+      "text": "2.2\nText pattern matching",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#Text_pattern_matching",
+      "is_external": false
+    },
+    {
+      "text": "2.3\nHTTP programming",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#HTTP_programming",
+      "is_external": false
+    },
+    {
+      "text": "2.4\nHTML parsing",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#HTML_parsing",
+      "is_external": false
+    },
+    {
+      "text": "2.5\nDOM parsing",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#DOM_parsing",
+      "is_external": false
+    },
+    {
+      "text": "2.6\nVertical aggregation",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#Vertical_aggregation",
+      "is_external": false
+    },
+    {
+      "text": "2.7\nSemantic annotation recognizing",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#Semantic_annotation_recognizing",
+      "is_external": false
+    },
+    {
+      "text": "2.8\nComputer vision web-page analysis",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#Computer_vision_web-page_analysis",
+      "is_external": false
+    },
+    {
+      "text": "3\nLegal issues",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#Legal_issues",
+      "is_external": false
+    },
+    {
+      "text": "3.1\nUnited States",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#United_States",
+      "is_external": false
+    },
+    {
+      "text": "3.2\nEuropean Union",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#European_Union",
+      "is_external": false
+    },
+    {
+      "text": "3.3\nAustralia",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#Australia",
+      "is_external": false
+    },
+    {
+      "text": "3.4\nIndia",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#India",
+      "is_external": false
+    },
+    {
+      "text": "4\nMethods to prevent web scraping",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#Methods_to_prevent_web_scraping",
+      "is_external": false
+    },
+    {
+      "text": "5\nSee also",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#See_also",
+      "is_external": false
+    },
+    {
+      "text": "6\nReferences",
+      "href": "https://en.wikipedia.org/wiki/Web_scraping#References",
+      "is_external": false
+    },
+    {
+      "text": "العربية",
+      "href": "https://ar.wikipedia.org/wiki/%D8%AA%D8%AC%D8%B1%D9%8A%D9%81_%D9%88%D9%8A%D8%A8",
+      "is_external": true
+    },
+    {
+      "text": "Català",
+      "href": "https://ca.wikipedia.org/wiki/Web_scraping",
+      "is_external": true
+    },
+    {
+      "text": "Čeština",
+      "href": "https://cs.wikipedia.org/wiki/Web_scraping",
+      "is_external": true
+    },
+    {
+      "text": "الدارجة",
+      "href": "https://ary.wikipedia.org/wiki/%D8%AA%D8%BA%D8%B1%D8%A7%D9%81_%D9%84%D9%88%D9%8A%D8%A8",
+      "is_external": true
+    },
+    {
+      "text": "Deutsch",
+      "href": "https://de.wikipedia.org/wiki/Screen_Scraping",
+      "is_external": true
+    },
+    {
+      "text": "Español",
+      "href": "https://es.wikipedia.org/wiki/Web_scraping",
+      "is_external": true
+    },
+    {
+      "text": "Euskara",
+      "href": "https://eu.wikipedia.org/wiki/Web_scraping",
+      "is_external": true
+    },
+    {
+      "text": "فارسی",
+      "href": "https://fa.wikipedia.org/wiki/%D8%AA%D8%B1%D8%A7%D8%B4%DB%8C%D8%AF%D9%86_%D9%88%D8%A8",
+      "is_external": true
+    },
+    {
+      "text": "Français",
+      "href": "https://fr.wikipedia.org/wiki/Web_scraping",
+      "is_external": true
+    },
+    {
+      "text": "한국어",
+      "href": "https://ko.wikipedia.org/wiki/%EC%9B%B9_%EC%8A%A4%ED%81%AC%EB%9E%98%ED%95%91",
+      "is_external": true
+    }
+  ],
+  "tables": [
+    {
+      "table_id": 1,
+      "headers": [],
+      "rows": [
+        [
+          "",
+          "This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed.Find sources: \"Web scraping\" – news · newspapers · books · scholar · JSTOR (April 2023) (Learn how and when to remove this message)"
+        ]
+      ]
+    },
+    {
+      "table_id": 2,
+      "headers": [],
+      "rows": [
+        [
+          "",
+          "This section contains instructions or advice. Wikipedia is not a guidebook; please help rewrite such content to be encyclopedic or move it to Wikiversity, Wikibooks, or Wikivoyage. (October 2025)"
+        ]
+      ]
+    },
+    {
+      "table_id": 3,
+      "headers": [],
+      "rows": [
+        [
+          "",
+          "The examples and perspective in this section deal primarily with the United States and do not represent a worldwide view of the subject. You may improve this section, discuss the issue on the talk page, or create a new section, as appropriate. (October 2015) (Learn how and when to remove this message)"
+        ]
+      ]
+    }
+  ],
+  "lists": [
+    {
+      "type": "unordered",
+      "list_id": 1,
+      "items": [
+        "Main page",
+        "Contents",
+        "Current events",
+        "Random article",
+        "About Wikipedia",
+        "Contact us"
+      ]
+    },
+    {
+      "type": "unordered",
+      "list_id": 2,
+      "items": [
+        "Help",
+        "Learn to edit",
+        "Community portal",
+        "Recent changes",
+        "Upload file",
+        "Special pages"
+      ]
+    },
+    {
+      "type": "unordered",
+      "list_id": 6,
+      "items": [
+        "Donate",
+        "Create account",
+        "Log in"
+      ]
+    },
+    {
+      "type": "unordered",
+      "list_id": 7,
+      "items": [
+        "Donate",
+        "Create account",
+        "Log in"
+      ]
+    },
+    {
+      "type": "unordered",
+      "list_id": 8,
+      "items": [
+        "(Top)",
+        "1\nHistory",
+        "2\nTechniques\n\n\n\n\nToggle Techniques subsection\n\n\n\n\n\n2.1\nHuman copy-and-paste\n\n\n\n\n\n\n\n\n2.2\nText pattern matching\n\n\n\n\n\n\n\n\n2.3\nHTTP programming\n\n\n\n\n\n\n\n\n2.4\nHTML parsing\n\n\n\n\n\n\n\n\n2.5\nDOM parsing\n\n\n\n\n\n\n\n\n2.6\nVertical aggregation\n\n\n\n\n\n\n\n\n2.7\nSemantic annotation recognizing\n\n\n\n\n\n\n\n\n2.8\nComputer vision web-page analysis",
+        "3\nLegal issues\n\n\n\n\nToggle Legal issues subsection\n\n\n\n\n\n3.1\nUnited States\n\n\n\n\n\n\n\n\n3.2\nEuropean Union\n\n\n\n\n\n\n\n\n3.3\nAustralia\n\n\n\n\n\n\n\n\n3.4\nIndia",
+        "4\nMethods to prevent web scraping",
+        "5\nSee also",
+        "6\nReferences"
+      ]
+    },
+    {
+      "type": "unordered",
+      "list_id": 10,
+      "items": [
+        "2.1\nHuman copy-and-paste",
+        "2.2\nText pattern matching",
+        "2.3\nHTTP programming",
+        "2.4\nHTML parsing",
+        "2.5\nDOM parsing",
+        "2.6\nVertical aggregation",
+        "2.7\nSemantic annotation recognizing",
+        "2.8\nComputer vision web-page analysis"
+      ]
+    },
+    {
+      "type": "ordered",
+      "list_id": 1,
+      "items": [
+        "^ Thapelo, Tsaone Swaabow; Namoshe, Molaletsa; Matsebe, Oduetse; Motshegwa, Tshiamo; Bopape, Mary-Jane Morongwa (2021-07-28). \"SASSCAL WebSAPI: A Web Scraping Application Programming Interface to Support Access to SASSCAL's Weather Data\". Data Science Journal. 20 24. doi:10.5334/dsj-2021-024. ISSN 1683-1470. S2CID 237719804.",
+        "^ \"Search Engine History.com\". Search Engine History. Retrieved November 26, 2019.",
+        "^ \"eBay, API's, and the Connected Web\". THE HISTORY OF THE WEB. 3 September 1995. Retrieved June 23, 2025.",
+        "^ Song, Ruihua; Microsoft Research (Sep 14, 2007). \"Joint optimization of wrapper generation and template detection\" (PDF). Proceedings of the 13th ACM SIGKDD international conference on Knowledge discovery and data mining. p. 894. doi:10.1145/1281192.1281287. ISBN 9781595936097. S2CID 833565. Archived from the original (PDF) on October 11, 2016.",
+        "^ Semantic annotation based web scraping",
+        "^ Roush, Wade (2012-07-25). \"Diffbot Is Using Computer Vision to Reinvent the Semantic Web\". Xconomy. www.xconomy.com. Retrieved 2013-03-15.",
+        "^ \"FAQ about linking – Are website terms of use binding contracts?\". www.chillingeffects.org. 2007-08-20. Archived from the original on 2002-03-08. Retrieved 2007-08-20.",
+        "^ Kenneth, Hirschey, Jeffrey (2014-01-01). \"Symbiotic Relationships: Pragmatic Acceptance of Data Scraping\". Berkeley Technology Law Journal. 29 (4). doi:10.15779/Z38B39B. ISSN 1086-3818.{{cite journal}}:  CS1 maint: multiple names: authors list (link)",
+        "^ \"Internet Law, Ch. 06: Trespass to Chattels\". www.tomwbell.com. 2007-08-20. Retrieved 2007-08-20.",
+        "^ \"What are the \"trespass to chattels\" claims some companies or website owners have brought?\". www.chillingeffects.org. 2007-08-20. Archived from the original on 2002-03-08. Retrieved 2007-08-20.",
+        "^ \"Ticketmaster Corp. v. Tickets.com, Inc\". 2007-08-20. Retrieved 2007-08-20.",
+        "^ \"American Airlines v. FareChase\" (PDF). 2007-08-20. Archived from the original (PDF) on 2011-07-23. Retrieved 2007-08-20.",
+        "^ \"American Airlines, FareChase Settle Suit\". The Free Library. 2003-06-13. Archived from the original on 2016-03-05. Retrieved 2012-02-26.",
+        "^ Imperva (2011). Detecting and Blocking Site Scraping Attacks. Imperva white paper.",
+        "^ Adler, Kenneth A. (2003-07-29). \"Controversy Surrounds 'Screen Scrapers': Software Helps Users Access Web Sites But Activity by Competitors Comes Under Scrutiny\". Archived from the original on 2011-02-11. Retrieved 2010-10-27.",
+        "^ \"CVENT, Inc. v. Eventbrite, Inc.,et al\" (PDF). 2014-11-24. Archived from the original (PDF) on 2013-09-21. Retrieved 2015-11-05.",
+        "^ \"QVC Inc. v. Resultly LLC, No. 14-06714 (E.D. Pa. filed Nov. 24, 2014)\". United States District Court for the Eastern District of Pennsylvania. Retrieved 5 November 2015.",
+        "^ Neuburger, Jeffrey D (5 December 2014). \"QVC Sues Shopping App for Web Scraping That Allegedly Triggered Site Outage\". The National Law Review. Proskauer Rose LLP. Retrieved 5 November 2015.",
+        "^ \"Did Iqbal/Twombly Raise the Bar for Browsewrap Claims?\" (PDF). 2010-09-17. Archived from the original (PDF) on 2011-07-23. Retrieved 2010-10-27.",
+        "^ \"Can Scraping Non-Infringing Content Become Copyright Infringement... Because Of How Scrapers Work? | Techdirt\". Techdirt. 2009-06-10. Retrieved 2016-05-24.",
+        "^ \"Facebook v. Power Ventures\". Electronic Frontier Foundation. July 2011. Retrieved 2016-05-24.",
+        "^ Chung, Andrew (June 14, 2021). \"U.S. Supreme Court revives LinkedIn bid to shield personal data\". Reuters. Retrieved June 14, 2021.",
+        "^ Whittaker, Zack (18 April 2022). \"Web scraping is legal, US appeals court reaffirms\". TechCrunch.",
+        "^ \"UDSKRIFT AF SØ- & HANDELSRETTENS DOMBOG\" (PDF) (in Danish). bvhd.dk. 2006-02-24. Archived from the original (PDF) on 2007-10-12. Retrieved 2007-05-30.",
+        "^ \"AI Act | Shaping Europe's digital future\". digital-strategy.ec.europa.eu. 2025-09-16. Retrieved 2025-09-28.",
+        "^ \"High Court of Ireland Decisions >> Ryanair Ltd -v- Billigfluege.de GMBH 2010 IEHC 47 (26 February 2010)\". British and Irish Legal Information Institute. 2010-02-26. Retrieved 2012-04-19.",
+        "^ Matthews, Áine (June 2010). \"Intellectual Property: Website Terms of Use\". Issue 26: June 2010. LK Shields Solicitors Update. p. 03. Archived from the original on 2012-06-24. Retrieved 2012-04-19.",
+        "^ \"La réutilisation des données publiquement accessibles en ligne à des fins de démarchage commercial | CNIL\". www.cnil.fr (in French). Retrieved 2020-07-05.",
+        "^ FindDataLab.com (2020-06-09). \"Can You Still Perform Web Scraping With The New CNIL Guidelines?\". Medium. Retrieved 2020-07-05.",
+        "^ National Office for the Information Economy (February 2004). \"Spam Act 2003: An overview for business\". Australian Communications Authority. p. 6. Archived from the original on 2019-12-03. Retrieved 2017-12-07.",
+        "^ National Office for the Information Economy (February 2004). \"Spam Act 2003: A practical guide for business\" (PDF). Australian Communications Authority. p. 20. Retrieved 2017-12-07.",
+        "^ \"Web Scraping for Beginners: A Guide 2024\". Proxyway. 2023-08-31. Retrieved 2024-03-15.",
+        "^ Mayank Dhiman Breaking Fraud & Bot Detection Solutions OWASP AppSec Cali' 2018 Retrieved February 10, 2018.",
+        "^ \"What is web scraping?\". DataDome. 2022-03-06. Retrieved 2025-12-16.",
+        "^ Belanger, Ashley (28 January 2025). \"AI haters build tarpits to trap and trick AI scrapers that ignore robots.txt\". Ars Technica."
+      ]
+    }
+  ],
+  "main_heading": "Web scraping",
+  "link_count": 50,
+  "table_count": 3,
+  "list_count": 7,
+  "metadata": {
+    "og_title": "Web scraping - Wikipedia"
+  }
+}

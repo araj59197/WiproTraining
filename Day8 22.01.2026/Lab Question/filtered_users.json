@@ -1,0 +1,52 @@
+[
+    {
+        "user_id": 1,
+        "full_name": "Leanne Graham",
+        "email_address": "Sincere@april.biz"
+    },
+    {
+        "user_id": 2,
+        "full_name": "Ervin Howell",
+        "email_address": "Shanna@melissa.tv"
+    },
+    {
+        "user_id": 3,
+        "full_name": "Clementine Bauch",
+        "email_address": "Nathan@yesenia.net"
+    },
+    {
+        "user_id": 4,
+        "full_name": "Patricia Lebsack",
+        "email_address": "Julianne.OConner@kory.org"
+    },
+    {
+        "user_id": 5,
+        "full_name": "Chelsey Dietrich",
+        "email_address": "Lucio_Hettinger@annie.ca"
+    },
+    {
+        "user_id": 6,
+        "full_name": "Mrs. Dennis Schulist",
+        "email_address": "Karley_Dach@jasper.info"
+    },
+    {
+        "user_id": 7,
+        "full_name": "Kurtis Weissnat",
+        "email_address": "Telly.Hoeger@billy.biz"
+    },
+    {
+        "user_id": 8,
+        "full_name": "Nicholas Runolfsdottir V",
+        "email_address": "Sherwood@rosamond.me"
+    },
+    {
+        "user_id": 9,
+        "full_name": "Glenna Reichert",
+        "email_address": "Chaim_McDermott@dana.io"
+    },
+    {
+        "user_id": 10,
+        "full_name": "Clementina DuBuque",
+        "email_address": "Rey.Padberg@karina.biz"
+    }
+]
