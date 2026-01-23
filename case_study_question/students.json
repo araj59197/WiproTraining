@@ -1,15 +1,28 @@
 [
     {
-        "id": "S101",
+        "id": "s101",
         "name": "Aditya",
-        "department": "CSE",
+        "department": "Cse",
         "semester": 8,
         "marks": [
-            67,
             78,
             79,
-            77,
-            76
+            80,
+            81,
+            82
+        ]
+    },
+    {
+        "id": "s102",
+        "name": "Anurag",
+        "department": "Cse",
+        "semester": 8,
+        "marks": [
+            78,
+            79,
+            85,
+            89,
+            90
         ]
     }
 ]

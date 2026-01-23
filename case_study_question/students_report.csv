@@ -1,2 +1,5 @@
-ID,Name,Department,Average,Grade
-S101,Aditya,CSE,75.4,B
+Generated On,2026-01-23 16:38:23
+
+ID,Name,Department,Semester,Average,Grade
+s101,Aditya,Cse,8,80.0,B
+s102,Anurag,Cse,8,84.2,B
