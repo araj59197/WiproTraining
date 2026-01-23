@@ -1,0 +1,147 @@
+Wipro Python Selenium Training Repository
+<div align="center">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="100" height="100"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg" alt="Selenium" width="100" height="100"/>
+Show Image
+Show Image
+Show Image
+Python Selenium Automation Testing Training - From Basics to Advanced
+</div>
+
+📋 Overview
+This repository contains Python Selenium automation testing exercises, assignments, and case studies completed during the Wipro training program. The training covers web automation, testing frameworks, and best practices for building robust automated test suites.
+🗂️ Repository Structure
+WiproTraining/
+├── Day1 12.01.2026/          # Python Fundamentals & Setup
+├── Day2 13.01.2026/          # Introduction to Selenium WebDriver
+├── Day3 14.01.2026/          # Locators and Web Elements
+├── Day4 16.01.2026/          # Browser Interactions & Navigation
+├── Day5 19.01.2026/          # Waits and Synchronization
+├── Day6 20.01.2026/          # Handling Alerts, Frames & Windows
+├── Day7 21.01.2026/          # Page Object Model (POM)
+├── Day8 22.01.2026/          # Test Frameworks & Best Practices
+├── case_study_question/      # Real-world Automation Projects
+├── revision.py               # Quick Reference Guide
+└── .gitignore               # Git Ignore File
+🚀 Getting Started
+Prerequisites
+
+Python 3.8 or higher
+pip (Python package manager)
+Chrome/Firefox browser
+ChromeDriver/GeckoDriver
+Basic understanding of HTML and web technologies
+
+Installation
+
+Clone the repository
+
+bashgit clone https://github.com/araj59197/WiproTraining.git
+
+Navigate to the project directory
+
+bashcd WiproTraining
+
+Install required packages
+
+bashpip install selenium
+pip install webdriver-manager
+pip install pytest
+
+Run a sample test
+
+bashcd "Day1 12.01.2026"
+python test_script.py
+📚 Learning Topics
+<img src="https://www.selenium.dev/images/selenium_logo_square_green.png" alt="Selenium" width="200" align="right"/>
+Python Fundamentals
+
+Variables, Data Types, and Operators
+Control Flow and Functions
+OOP Concepts
+Exception Handling
+
+Selenium WebDriver Essentials
+
+WebDriver Setup and Configuration
+Browser Automation Basics
+Element Locators (ID, Name, XPath, CSS)
+Web Element Interactions
+
+Advanced Selenium Concepts
+
+Explicit and Implicit Waits
+Handling Dynamic Elements
+JavaScript Executor
+Taking Screenshots
+Working with Alerts, Frames, and Multiple Windows
+
+Testing Frameworks
+
+Page Object Model (POM)
+pytest Framework
+Test Data Management
+Reporting and Logging
+
+💼 Case Studies
+<div align="center">
+<img src="https://www.tutorialsteacher.com/Content/images/home/selenium-icon.svg" alt="Automation" width="150"/>
+</div>
+The case_study_question folder contains real-world automation scenarios including:
+
+E-commerce website testing
+Form automation and validation
+Login/Logout workflows
+Data-driven testing examples
+Cross-browser testing scenarios
+
+🛠️ Technologies Used
+<p align="center">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="60" height="60"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg" alt="Selenium" width="60" height="60"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytest/pytest-original.svg" alt="pytest" width="60" height="60"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/chrome/chrome-original.svg" alt="Chrome" width="60" height="60"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/firefox/firefox-original.svg" alt="Firefox" width="60" height="60"/>
+</p>
+
+Language: Python 3.x
+Automation Tool: Selenium WebDriver
+Testing Framework: pytest
+Browsers: Chrome, Firefox
+Tools: Git, GitHub, VS Code
+
+📈 Progress Tracking
+
+✅ Day 1 - Completed
+✅ Day 2 - Completed
+✅ Day 3 - Completed
+✅ Day 4 - Completed
+✅ Day 5 - Completed
+✅ Day 6 - Completed
+✅ Day 7 - Completed
+✅ Day 8 - Completed
+
+🤝 Contributing
+This is a personal training repository, but suggestions and feedback are welcome!
+
+Fork the repository
+Create your feature branch (git checkout -b feature/improvement)
+Commit your changes (git commit -m 'Add some improvement')
+Push to the branch (git push origin feature/improvement)
+Open a Pull Request
+
+📝 Notes
+
+Each day's folder contains exercises, test scripts, and practice problems
+revision.py serves as a quick reference guide for Selenium commands
+All scripts include comments and documentation
+Screenshots and test reports are stored in respective folders
+
+📧 Contact
+Araj - @araj59197
+Project Link: https://github.com/araj59197/WiproTraining
+
+<div align="center">
+<img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" width="200"/>
+Happy Testing! 🚀
+</div>
