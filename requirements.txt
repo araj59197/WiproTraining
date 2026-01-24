@@ -1,0 +1,17 @@
+# Python Wipro Training Requirements
+
+# Web Automation
+selenium==4.27.1
+
+# Web Scraping
+beautifulsoup4==4.12.3
+lxml==5.1.0
+
+# HTTP Requests
+requests==2.31.0
+
+# Web Framework
+Flask==3.0.0
+
+# Additional Dependencies
+Werkzeug==3.0.1
