@@ -12,7 +12,6 @@
 [![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-4.12-yellow?style=for-the-badge)](https://www.crummy.com/software/BeautifulSoup/)
 
 [![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)](https://github.com/araj59197/WiproTraining)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/araj59197/WiproTraining?style=for-the-badge)](https://github.com/araj59197/WiproTraining/stargazers)
 [![Forks](https://img.shields.io/github/forks/araj59197/WiproTraining?style=for-the-badge)](https://github.com/araj59197/WiproTraining/network/members)
 
@@ -37,7 +36,6 @@
 - [� Progress Tracker](#-progress-tracker)
 - [💡 Tips for Learning](#-tips-for-learning)
 - [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
 - [📧 Contact](#-contact)
 - [🔗 Useful Resources](#-useful-resources)
 
@@ -362,12 +360,6 @@ Contributions are always welcome! Here's how you can help:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 

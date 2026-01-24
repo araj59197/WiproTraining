@@ -1,5 +1,5 @@
 venv/
 .venv/
 env/
-revision.py
+revision.py/
 requirement.py
