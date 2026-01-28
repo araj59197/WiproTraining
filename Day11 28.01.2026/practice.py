@@ -6,7 +6,6 @@ import sys
 # 1. ASSERT STATEMENTS AND EXCEPTIONS
 # ==========================================
 
-
 # Simple assert
 def test_addition():
     assert 2 + 3 == 5
@@ -37,7 +36,6 @@ def test_exception_message():
 # ==========================================
 # 2. PYTEST MARKERS - SKIP AND XFAIL
 # ==========================================
-
 
 # Skip test unconditionally
 @pytest.mark.skip(reason="Feature not implemented yet")
@@ -73,7 +71,6 @@ def test_might_pass():
 # 3. CUSTOM MARKERS (smoke, regression)
 # ==========================================
 
-
 @pytest.mark.smoke
 def test_login_smoke():
     assert True
@@ -97,7 +94,6 @@ def test_password_reset():
 # ==========================================
 # 4. UNIT TESTS - Calculator Example
 # ==========================================
-
 
 # Calculator functions
 def multiply(a, b):
@@ -137,7 +133,6 @@ def test_subtract():
 # 5. FUNCTIONAL TESTS - Auth Example
 # ==========================================
 
-
 # Authentication function
 def login(username, password):
     if username == "admin" and password == "admin123":
@@ -165,29 +160,22 @@ def test_wrong_password():
 # 6. PARAMETERIZED TESTS
 # ==========================================
 
-
-@pytest.mark.parametrize(
-    "a, b, expected",
-    [
-        (2, 3, 6),
-        (0, 5, 0),
-        (-1, 4, -4),
-        (10, 10, 100),
-    ],
-)
+@pytest.mark.parametrize("a, b, expected", [
+    (2, 3, 6),
+    (0, 5, 0),
+    (-1, 4, -4),
+    (10, 10, 100),
+])
 def test_multiply_parametrized(a, b, expected):
     assert multiply(a, b) == expected
 
 
-@pytest.mark.parametrize(
-    "username, password, expected",
-    [
-        ("admin", "admin123", "Login Successful"),
-        ("admin", "wrong", "Invalid Credentials"),
-        ("user", "admin123", "Invalid Credentials"),
-        ("", "", "Invalid Credentials"),
-    ],
-)
+@pytest.mark.parametrize("username, password, expected", [
+    ("admin", "admin123", "Login Successful"),
+    ("admin", "wrong", "Invalid Credentials"),
+    ("user", "admin123", "Invalid Credentials"),
+    ("", "", "Invalid Credentials"),
+])
 def test_login_parametrized(username, password, expected):
     assert login(username, password) == expected
 
@@ -196,11 +184,10 @@ def test_login_parametrized(username, password, expected):
 # 7. PARALLEL TEST EXAMPLES (for pytest-xdist)
 # ==========================================
 
-
 @pytest.mark.parametrize("value", range(1, 6))
 def test_parallel_calculation(value):
     result = value * value
-    assert result == value**2
+    assert result == value ** 2
 
 
 @pytest.mark.parametrize("text", ["hello", "world", "pytest", "python"])
