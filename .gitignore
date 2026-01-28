@@ -5,10 +5,3 @@ revision.py
 requirement.py
 venv456/
 .vscode/
-
-Add Day10 Lab10 - Pytest basics, fixtures, and TDD examples
-
-- Q1: Pytest basics, test discovery, assertions
-- Q2: Setup/teardown, fixtures, conftest.py
-- TDD Calculator with Red-Green-Refactor cycle
-- Updated .gitignore
