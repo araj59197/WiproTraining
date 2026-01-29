@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.6 on win32)" generated="2026-01-29T15:25:56.039719" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotFramework" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\RobotFramework">
+<suite id="s1-s1" name="TC001KeyWords" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\RobotFramework\TC001KeyWords.robot">
+<test id="s1-s1-t1" name="TC001.robot" line="10">
+<kw name="Open Application">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:25:56.709458" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>https://www.google.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-29T15:25:56.709458" elapsed="3.426798"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-29T15:26:00.137261" elapsed="0.174540"/>
+</kw>
+<status status="PASS" start="2026-01-29T15:25:56.707454" elapsed="3.604347"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:00.325795" level="INFO">Page title is 'Google'.</msg>
+<arg>Google</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-01-29T15:26:00.311801" elapsed="0.014998"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-29T15:26:00.326799" elapsed="2.266844"/>
+</kw>
+<status status="PASS" start="2026-01-29T15:25:56.706451" elapsed="5.888020"/>
+</test>
+<status status="PASS" start="2026-01-29T15:25:56.123416" elapsed="6.472053"/>
+</suite>
+<suite id="s1-s2" name="TC002 DataDrivenTest" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\RobotFramework\TC002_DataDrivenTest.robot">
+<test id="s1-s2-t1" name="Valid Login" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-01-29T15:26:02.606469" level="INFO">Opening browser 'chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
+<arg>https://practicetestautomation.com/practice-test-login/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-29T15:26:02.606469" elapsed="3.865914"/>
+</kw>
+<kw name="Login Test">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:06.476894" level="INFO">Typing text 'student' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T15:26:06.475371" elapsed="0.186863"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:06.663234" level="INFO">Typing text 'Password123' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T15:26:06.662234" elapsed="0.164338"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:06.827570" level="INFO">Clicking button 'id=submit'.</msg>
+<arg>id=submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T15:26:06.826572" elapsed="1.051367"/>
+</kw>
+<arg>student</arg>
+<arg>Password123</arg>
+<status status="PASS" start="2026-01-29T15:26:06.473818" elapsed="1.404121"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-29T15:26:07.878936" elapsed="2.264991"/>
+</kw>
+<status status="PASS" start="2026-01-29T15:26:02.603459" elapsed="7.540468"/>
+</test>
+<test id="s1-s2-t2" name="Invalid Login" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-01-29T15:26:10.147453" level="INFO">Opening browser 'chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
+<arg>https://practicetestautomation.com/practice-test-login/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-29T15:26:10.146909" elapsed="4.170525"/>
+</kw>
+<kw name="Login Test">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:14.319435" level="INFO">Typing text 'user' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T15:26:14.318434" elapsed="0.177933"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:14.497370" level="INFO">Typing text 'wrongpass' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T15:26:14.497370" elapsed="0.142239"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:14.640607" level="INFO">Clicking button 'id=submit'.</msg>
+<arg>id=submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T15:26:14.639609" elapsed="0.131198"/>
+</kw>
+<arg>user</arg>
+<arg>wrongpass</arg>
+<status status="PASS" start="2026-01-29T15:26:14.318434" elapsed="0.452373"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-29T15:26:14.772807" elapsed="2.205323"/>
+</kw>
+<status status="PASS" start="2026-01-29T15:26:10.145907" elapsed="6.832223"/>
+</test>
+<status status="PASS" start="2026-01-29T15:26:02.597468" elapsed="14.382714"/>
+</suite>
+<suite id="s1-s3" name="TC003 Logging" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\RobotFramework\TC003_Logging.robot">
+<test id="s1-s3-t1" name="TC003_Logging.robot" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:16.989181" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-29T15:26:16.989181" elapsed="6.815014"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-29T15:26:23.805204" elapsed="0.041207"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder='Username']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T15:26:23.847424" elapsed="0.986078"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:24.835491" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@placeholder='Username']'.</msg>
+<arg>xpath=//input[@placeholder='Username']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T15:26:24.834491" elapsed="0.151314"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:24.986802" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@placeholder='Password']'.</msg>
+<arg>xpath=//input[@placeholder='Password']</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T15:26:24.986802" elapsed="0.137020"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:25.124816" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T15:26:25.124816" elapsed="0.153004"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-29T15:26:28.280131" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-29T15:26:25.277820" elapsed="3.002311"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-01-29T15:26:28.478542" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-29T15:26:28.478542" level="FAIL">Page should have contained text 'Dashboard' but did not.</msg>
+<arg>Dashboard</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2026-01-29T15:26:28.281133" elapsed="0.238003">Page should have contained text 'Dashboard' but did not.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-01-29T15:26:28.519136" elapsed="0.000995"/>
+</kw>
+<status status="FAIL" start="2026-01-29T15:26:16.988174" elapsed="11.531957">Page should have contained text 'Dashboard' but did not.</status>
+</test>
+<status status="FAIL" start="2026-01-29T15:26:16.982191" elapsed="11.539945"/>
+</suite>
+<status status="FAIL" start="2026-01-29T15:25:56.042723" elapsed="32.482410"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RobotFramework" id="s1" pass="3" fail="1" skip="0">RobotFramework</stat>
+<stat name="TC001KeyWords" id="s1-s1" pass="1" fail="0" skip="0">RobotFramework.TC001KeyWords</stat>
+<stat name="TC002 DataDrivenTest" id="s1-s2" pass="2" fail="0" skip="0">RobotFramework.TC002 DataDrivenTest</stat>
+<stat name="TC003 Logging" id="s1-s3" pass="0" fail="1" skip="0">RobotFramework.TC003 Logging</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
