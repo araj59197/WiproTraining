@@ -1,190 +1,818 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.12.6 on win32)" generated="2026-01-29T15:25:56.039719" rpa="false" schemaversion="5">
-<suite id="s1" name="RobotFramework" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\RobotFramework">
-<suite id="s1-s1" name="TC001KeyWords" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\RobotFramework\TC001KeyWords.robot">
-<test id="s1-s1-t1" name="TC001.robot" line="10">
-<kw name="Open Application">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:25:56.709458" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
-<arg>https://www.google.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-29T15:25:56.709458" elapsed="3.426798"/>
+<robot generator="Robot 7.4.1 (Python 3.12.6 on win32)" generated="2026-01-29T16:13:28.847007" rpa="false" schemaversion="5">
+<suite id="s1" name="Q2 Environment Setup Verification" source="c:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\Lab Question\Q2_Environment_Setup_Verification.robot">
+<test id="s1-t1" name="Test Case 1 - Verify Python Installation" line="10">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.552399" elapsed="0.000000"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-01-29T15:26:00.137261" elapsed="0.174540"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verifying Python Installation</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.553381" elapsed="0.001023"/>
 </kw>
-<status status="PASS" start="2026-01-29T15:25:56.707454" elapsed="3.604347"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.555401" elapsed="0.001000"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:00.325795" level="INFO">Page title is 'Google'.</msg>
-<arg>Google</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-01-29T15:26:00.311801" elapsed="0.014998"/>
+<try>
+<branch type="TRY">
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:13:29.557400" level="INFO">Starting process:
+python --version</msg>
+<msg time="2026-01-29T16:13:29.569382" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:13:29.614396" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:13:29.614396" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<var>${result}</var>
+<arg>python</arg>
+<arg>--version</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.556401" elapsed="0.057995"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-01-29T15:26:00.326799" elapsed="2.266844"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:29.616386" level="INFO">Python command output: Python 3.12.6</msg>
+<arg>Python command output: ${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.615386" elapsed="0.001000"/>
 </kw>
-<status status="PASS" start="2026-01-29T15:25:56.706451" elapsed="5.888020"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Python Status: ${result.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.616386" elapsed="0.001000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-01-29T16:13:29.619404" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<arg>msg=Python is not installed or not in PATH</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.618404" elapsed="0.001000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>Python</arg>
+<arg>msg=Python command did not return expected output</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.619404" elapsed="0.001999"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:29.621403" level="INFO">Python is installed and working correctly</msg>
+<arg>Python is installed and working correctly</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.621403" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Python is installed and working correctly</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.621403" elapsed="0.000981"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:13:29.556401" elapsed="0.065983"/>
+</branch>
+<branch type="EXCEPT" assign="${error}">
+<kw name="Log" owner="BuiltIn">
+<arg>Python Installation Check FAILED: ${error}</arg>
+<arg>level=ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:29.623408" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Python Installation Check FAILED</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:29.623408" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Error: ${error}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:29.623408" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nPlease install Python from https://www.python.org/downloads/</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:29.623408" elapsed="0.000000"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>Python is not properly installed: ${error}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:29.623408" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-29T16:13:29.622384" elapsed="0.001024"/>
+</branch>
+<status status="PASS" start="2026-01-29T16:13:29.556401" elapsed="0.068002"/>
+</try>
+<doc>Verifies that Python is installed and accessible</doc>
+<tag>python</tag>
+<tag>setup</tag>
+<status status="PASS" start="2026-01-29T16:13:29.549382" elapsed="0.075021"/>
 </test>
-<status status="PASS" start="2026-01-29T15:25:56.123416" elapsed="6.472053"/>
-</suite>
-<suite id="s1-s2" name="TC002 DataDrivenTest" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\RobotFramework\TC002_DataDrivenTest.robot">
-<test id="s1-s2-t1" name="Valid Login" line="8">
-<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2026-01-29T15:26:02.606469" level="INFO">Opening browser 'chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
-<arg>https://practicetestautomation.com/practice-test-login/</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-29T15:26:02.606469" elapsed="3.865914"/>
+<test id="s1-t2" name="Test Case 2 - Verify Robot Framework Installation" line="43">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.627389" elapsed="0.001092"/>
 </kw>
-<kw name="Login Test">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:06.476894" level="INFO">Typing text 'student' into text field 'id=username'.</msg>
-<arg>id=username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-29T15:26:06.475371" elapsed="0.186863"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verifying Robot Framework Installation</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.629619" elapsed="0.000983"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:06.663234" level="INFO">Typing text 'Password123' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-29T15:26:06.662234" elapsed="0.164338"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.630602" elapsed="0.001003"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:06.827570" level="INFO">Clicking button 'id=submit'.</msg>
-<arg>id=submit</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-29T15:26:06.826572" elapsed="1.051367"/>
+<try>
+<branch type="TRY">
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:13:29.632625" level="INFO">Starting process:
+robot --version</msg>
+<msg time="2026-01-29T16:13:29.643603" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:13:30.416741" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:13:30.416741" level="INFO">${result} = &lt;result object with rc 251&gt;</msg>
+<var>${result}</var>
+<arg>robot</arg>
+<arg>--version</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:13:29.632625" elapsed="0.784116"/>
 </kw>
-<arg>student</arg>
-<arg>Password123</arg>
-<status status="PASS" start="2026-01-29T15:26:06.473818" elapsed="1.404121"/>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-01-29T16:13:30.419761" level="INFO">${output} = Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
+<var>${output}</var>
+<arg>'${result.stderr}' != '${EMPTY}'</arg>
+<arg>${result.stderr}</arg>
+<arg>${result.stdout}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.417759" elapsed="0.002002"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-01-29T15:26:07.878936" elapsed="2.264991"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:30.420759" level="INFO">Robot Framework command output: Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
+<arg>Robot Framework command output: ${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.419761" elapsed="0.000998"/>
 </kw>
-<status status="PASS" start="2026-01-29T15:26:02.603459" elapsed="7.540468"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.420759" elapsed="0.000996"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>Robot Framework</arg>
+<arg>msg=Robot Framework is not properly installed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.421755" elapsed="0.001004"/>
+</kw>
+<kw name="Get Line" owner="String">
+<msg time="2026-01-29T16:13:30.422759" level="INFO">${version_line} = Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
+<var>${version_line}</var>
+<arg>${output}</arg>
+<arg>0</arg>
+<doc>Returns the specified line from the given ``string``.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.422759" elapsed="0.000996"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:30.423755" level="INFO">Robot Framework Version: Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
+<arg>Robot Framework Version: ${version_line}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.423755" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Framework: ${version_line}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.423755" elapsed="0.001002"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:30.425759" level="INFO">Robot Framework is installed and working correctly</msg>
+<arg>Robot Framework is installed and working correctly</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.424757" elapsed="0.001002"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Framework is installed and working correctly</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.425759" elapsed="0.001003"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:13:29.631605" elapsed="0.795157"/>
+</branch>
+<branch type="EXCEPT" assign="${error}">
+<kw name="Log" owner="BuiltIn">
+<arg>Robot Framework Installation Check FAILED: ${error}</arg>
+<arg>level=ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:30.426762" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Framework Installation Check FAILED</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:30.426762" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Error: ${error}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:30.426762" elapsed="0.000993"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nPlease install Robot Framework: pip install robotframework</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:30.427755" elapsed="0.000000"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>Robot Framework is not properly installed: ${error}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:30.427755" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-29T16:13:30.426762" elapsed="0.000993"/>
+</branch>
+<status status="PASS" start="2026-01-29T16:13:29.631605" elapsed="0.796150"/>
+</try>
+<doc>Verifies that Robot Framework is installed</doc>
+<tag>robotframework</tag>
+<tag>setup</tag>
+<status status="PASS" start="2026-01-29T16:13:29.625403" elapsed="0.803068"/>
 </test>
-<test id="s1-s2-t2" name="Invalid Login" line="9">
-<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2026-01-29T15:26:10.147453" level="INFO">Opening browser 'chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
-<arg>https://practicetestautomation.com/practice-test-login/</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-29T15:26:10.146909" elapsed="4.170525"/>
+<test id="s1-t3" name="Test Case 3 - Verify SeleniumLibrary Import" line="80">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.430032" elapsed="0.001014"/>
 </kw>
-<kw name="Login Test">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:14.319435" level="INFO">Typing text 'user' into text field 'id=username'.</msg>
-<arg>id=username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-29T15:26:14.318434" elapsed="0.177933"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verifying SeleniumLibrary</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.432043" elapsed="0.000000"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:14.497370" level="INFO">Typing text 'wrongpass' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-29T15:26:14.497370" elapsed="0.142239"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.433045" elapsed="0.001003"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:14.640607" level="INFO">Clicking button 'id=submit'.</msg>
-<arg>id=submit</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-29T15:26:14.639609" elapsed="0.131198"/>
+<try>
+<branch type="TRY">
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:13:30.435043" level="INFO">Starting process:
+python -c "import SeleniumLibrary; print(f'SeleniumLibrary {SeleniumLibrary.__version__}')"</msg>
+<msg time="2026-01-29T16:13:30.447134" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:13:31.821115" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:13:31.821115" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<var>${result}</var>
+<arg>python</arg>
+<arg>-c</arg>
+<arg>import SeleniumLibrary; print(f'SeleniumLibrary {SeleniumLibrary.__version__}')</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:13:30.434048" elapsed="1.387618"/>
 </kw>
-<arg>user</arg>
-<arg>wrongpass</arg>
-<status status="PASS" start="2026-01-29T15:26:14.318434" elapsed="0.452373"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:31.822261" level="INFO">SeleniumLibrary check output: SeleniumLibrary 6.8.0</msg>
+<arg>SeleniumLibrary check output: ${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.821710" elapsed="0.000551"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-01-29T15:26:14.772807" elapsed="2.205323"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.823259" elapsed="0.000998"/>
 </kw>
-<status status="PASS" start="2026-01-29T15:26:10.145907" elapsed="6.832223"/>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-01-29T16:13:31.825266" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<arg>msg=SeleniumLibrary is not installed</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.824257" elapsed="0.001009"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-29T16:13:31.826257" level="INFO">${library_status} = SeleniumLibrary imported successfully</msg>
+<var>${library_status}</var>
+<arg>SeleniumLibrary imported successfully</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.826257" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:31.827255" level="INFO">SeleniumLibrary imported successfully</msg>
+<arg>${library_status}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.826257" elapsed="0.000998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${library_status}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.827255" elapsed="0.001003"/>
+</kw>
+<kw name="Get Selenium Timeout" owner="SeleniumLibrary">
+<msg time="2026-01-29T16:13:31.829275" level="INFO">${timeout} = 5 seconds</msg>
+<var>${timeout}</var>
+<doc>Gets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.828258" elapsed="0.001048"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:31.829306" level="INFO">Selenium Default Timeout: 5 seconds</msg>
+<arg>Selenium Default Timeout: ${timeout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.829306" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Selenium Default Timeout: ${timeout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.829306" elapsed="0.001005"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:31.831315" level="INFO">SeleniumLibrary is working correctly</msg>
+<arg>SeleniumLibrary is working correctly</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.830311" elapsed="0.001004"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SeleniumLibrary is working correctly</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.831315" elapsed="0.001003"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:13:30.434048" elapsed="1.398270"/>
+</branch>
+<branch type="EXCEPT" assign="${error}">
+<kw name="Log" owner="BuiltIn">
+<arg>SeleniumLibrary Check FAILED: ${error}</arg>
+<arg>level=ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:31.833310" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SeleniumLibrary Check FAILED</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:31.833310" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Error: ${error}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:31.833310" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nPlease install SeleniumLibrary: pip install robotframework-seleniumlibrary</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:31.833310" elapsed="0.000000"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>SeleniumLibrary is not properly installed: ${error}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:31.833310" elapsed="0.000996"/>
+</kw>
+<status status="NOT RUN" start="2026-01-29T16:13:31.832318" elapsed="0.001988"/>
+</branch>
+<status status="PASS" start="2026-01-29T16:13:30.434048" elapsed="1.400258"/>
+</try>
+<doc>Verifies that SeleniumLibrary can be imported successfully</doc>
+<tag>selenium</tag>
+<tag>setup</tag>
+<status status="PASS" start="2026-01-29T16:13:30.430032" elapsed="1.404274"/>
 </test>
-<status status="PASS" start="2026-01-29T15:26:02.597468" elapsed="14.382714"/>
-</suite>
-<suite id="s1-s3" name="TC003 Logging" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\RobotFramework\TC003_Logging.robot">
-<test id="s1-s3-t1" name="TC003_Logging.robot" line="11">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:16.989181" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-29T15:26:16.989181" elapsed="6.815014"/>
+<test id="s1-t4" name="Test Case 4 - Print Robot Framework Version Details" line="123">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.836297" elapsed="0.001019"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-01-29T15:26:23.805204" elapsed="0.041207"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Framework Version Details</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.837316" elapsed="0.001000"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//input[@placeholder='Username']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-01-29T15:26:23.847424" elapsed="0.986078"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.838316" elapsed="0.000996"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:24.835491" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@placeholder='Username']'.</msg>
-<arg>xpath=//input[@placeholder='Username']</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-29T15:26:24.834491" elapsed="0.151314"/>
+<try>
+<branch type="TRY">
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:13:31.840302" level="INFO">Starting process:
+robot --version</msg>
+<msg time="2026-01-29T16:13:31.844310" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:13:32.696923" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:13:32.697911" level="INFO">${result} = &lt;result object with rc 251&gt;</msg>
+<var>${result}</var>
+<arg>robot</arg>
+<arg>--version</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:13:31.840302" elapsed="0.857609"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:24.986802" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@placeholder='Password']'.</msg>
-<arg>xpath=//input[@placeholder='Password']</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-29T15:26:24.986802" elapsed="0.137020"/>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-01-29T16:13:32.699922" level="INFO">${rf_version} = Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
+<var>${rf_version}</var>
+<arg>'${result.stderr}' != '${EMPTY}'</arg>
+<arg>${result.stderr}</arg>
+<arg>${result.stdout}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-01-29T16:13:32.697911" elapsed="0.002011"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:25.124816" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
-<arg>xpath=//button[@type='submit']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-29T15:26:25.124816" elapsed="0.153004"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:32.700922" level="INFO">Full version output:
+Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
+<arg>Full version output:\n${rf_version}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:32.699922" elapsed="0.001000"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-01-29T15:26:28.280131" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-01-29T15:26:25.277820" elapsed="3.002311"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n${rf_version}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:32.700922" elapsed="0.001004"/>
 </kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-01-29T15:26:28.478542" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-01-29T15:26:28.478542" level="FAIL">Page should have contained text 'Dashboard' but did not.</msg>
-<arg>Dashboard</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="FAIL" start="2026-01-29T15:26:28.281133" elapsed="0.238003">Page should have contained text 'Dashboard' but did not.</status>
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:13:32.702926" level="INFO">Starting process:
+python --version</msg>
+<msg time="2026-01-29T16:13:32.705914" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:13:32.749498" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:13:32.749498" level="INFO">${python_result} = &lt;result object with rc 0&gt;</msg>
+<var>${python_result}</var>
+<arg>python</arg>
+<arg>--version</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:13:32.701926" elapsed="0.047572"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2026-01-29T15:26:28.519136" elapsed="0.000995"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n${python_result.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:32.750503" elapsed="0.000998"/>
 </kw>
-<status status="FAIL" start="2026-01-29T15:26:16.988174" elapsed="11.531957">Page should have contained text 'Dashboard' but did not.</status>
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:13:32.752505" level="INFO">Starting process:
+pip list | findstr robot</msg>
+<msg time="2026-01-29T16:13:32.763508" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:13:33.773161" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:13:33.774171" level="INFO">${pip_result} = &lt;result object with rc 0&gt;</msg>
+<var>${pip_result}</var>
+<arg>pip</arg>
+<arg>list</arg>
+<arg>|</arg>
+<arg>findstr</arg>
+<arg>robot</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:13:32.751501" elapsed="1.022670"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:33.775223" level="INFO">Installed Robot packages:
+robotframework                 7.4.1
+robotframework-pythonlibcore   4.5.0
+robotframework-ride            2.2.2
+robotframework-seleniumlibrary 6.8.0</msg>
+<arg>Installed Robot packages:\n${pip_result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.774171" elapsed="0.001052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nInstalled Robot Framework packages:</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.775223" elapsed="0.000954"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${pip_result.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.776177" elapsed="0.001995"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:33.779171" level="INFO">Version information retrieved successfully</msg>
+<arg>Version information retrieved successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.778172" elapsed="0.001081"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nVersion information retrieved successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.779253" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:13:31.840302" elapsed="1.938951"/>
+</branch>
+<branch type="EXCEPT" assign="${error}">
+<kw name="Log" owner="BuiltIn">
+<arg>Could not retrieve all version details: ${error}</arg>
+<arg>level=WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:33.780271" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Could not retrieve all version details</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:33.780271" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Error: ${error}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:33.780271" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-29T16:13:33.780271" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-29T16:13:31.839312" elapsed="1.940959"/>
+</try>
+<doc>Displays detailed Robot Framework version information</doc>
+<tag>setup</tag>
+<tag>version</tag>
+<status status="PASS" start="2026-01-29T16:13:31.835312" elapsed="1.945944"/>
 </test>
-<status status="FAIL" start="2026-01-29T15:26:16.982191" elapsed="11.539945"/>
-</suite>
-<status status="FAIL" start="2026-01-29T15:25:56.042723" elapsed="32.482410"/>
+<test id="s1-t5" name="Test Case 5 - Comprehensive Environment Check" line="159">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.783272" elapsed="0.000990"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Comprehensive Environment Check</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.785265" elapsed="0.001015"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.786280" elapsed="0.000997"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-29T16:13:33.788267" level="INFO">${all_checks_passed} = True</msg>
+<var>${all_checks_passed}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.787277" elapsed="0.000990"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:13:33.789265" level="INFO">Starting process:
+python --version</msg>
+<msg time="2026-01-29T16:13:33.793277" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:13:33.839296" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:13:33.840312" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<var>${result}</var>
+<arg>python</arg>
+<arg>--version</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.789265" elapsed="0.051047"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-01-29T16:13:33.841311" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.840312" elapsed="0.000999"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Python: PASS</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.841311" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:13:33.789265" elapsed="0.053046"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Python: FAIL</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:33.843311" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${all_checks_passed}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:33.843311" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-29T16:13:33.842311" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2026-01-29T16:13:33.788267" elapsed="0.055044"/>
+</try>
+<try>
+<branch type="TRY">
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:13:33.844304" level="INFO">Starting process:
+robot --version</msg>
+<msg time="2026-01-29T16:13:33.847312" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:13:34.648525" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:13:34.648525" level="INFO">${result} = &lt;result object with rc 251&gt;</msg>
+<var>${result}</var>
+<arg>robot</arg>
+<arg>--version</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:13:33.844304" elapsed="0.804221"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-01-29T16:13:34.651523" level="INFO">${output} = Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
+<var>${output}</var>
+<arg>'${result.stderr}' != '${EMPTY}'</arg>
+<arg>${result.stderr}</arg>
+<arg>${result.stdout}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-01-29T16:13:34.649523" elapsed="0.002000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>Robot Framework</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-01-29T16:13:34.651523" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Framework: PASS</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:34.652513" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:13:33.843311" elapsed="0.809202"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Framework: FAIL</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:34.653524" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${all_checks_passed}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:34.653524" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-29T16:13:34.653524" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-29T16:13:33.843311" elapsed="0.810213"/>
+</try>
+<try>
+<branch type="TRY">
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:13:34.654516" level="INFO">Starting process:
+python -c "import SeleniumLibrary"</msg>
+<msg time="2026-01-29T16:13:34.666515" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:13:36.022333" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:13:36.022333" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<var>${result}</var>
+<arg>python</arg>
+<arg>-c</arg>
+<arg>import SeleniumLibrary</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:13:34.654516" elapsed="1.367817"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-01-29T16:13:36.023334" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-01-29T16:13:36.022333" elapsed="0.001001"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SeleniumLibrary: PASS</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:36.023334" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:13:34.654516" elapsed="1.369817"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SeleniumLibrary: FAIL</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:36.025322" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${all_checks_passed}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:36.025322" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-29T16:13:36.024333" elapsed="0.000989"/>
+</branch>
+<status status="PASS" start="2026-01-29T16:13:34.653524" elapsed="1.371798"/>
+</try>
+<try>
+<branch type="TRY">
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:13:36.026339" level="INFO">Starting process:
+pip --version</msg>
+<msg time="2026-01-29T16:13:36.037614" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:13:36.830186" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:13:36.831200" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<var>${result}</var>
+<arg>pip</arg>
+<arg>--version</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:13:36.026339" elapsed="0.804861"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-01-29T16:13:36.832198" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result.rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-01-29T16:13:36.831200" elapsed="0.000998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>pip: PASS</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:36.833202" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:13:36.025322" elapsed="0.807880"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>pip: FAIL</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:36.834197" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${all_checks_passed}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:36.834197" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-29T16:13:36.833202" elapsed="0.000995"/>
+</branch>
+<status status="PASS" start="2026-01-29T16:13:36.025322" elapsed="0.808875"/>
+</try>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:36.834197" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="${all_checks_passed}">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:13:36.837200" level="INFO">ALL ENVIRONMENT CHECKS PASSED</msg>
+<arg>ALL ENVIRONMENT CHECKS PASSED</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:13:36.836193" elapsed="0.001007"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>ALL ENVIRONMENT CHECKS PASSED</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:36.837200" elapsed="0.001004"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Environment is properly configured!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:36.838204" elapsed="0.000992"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:13:36.836193" elapsed="0.003003"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>SOME ENVIRONMENT CHECKS FAILED</arg>
+<arg>level=ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:36.839196" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SOME ENVIRONMENT CHECKS FAILED</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:36.840204" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Please review the errors above and install missing dependencies</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:36.840204" elapsed="0.000000"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>Environment setup is incomplete</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-01-29T16:13:36.840204" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-29T16:13:36.839196" elapsed="0.001008"/>
+</branch>
+<status status="PASS" start="2026-01-29T16:13:36.836193" elapsed="0.004011"/>
+</if>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>========================================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:13:36.841345" elapsed="0.000825"/>
+</kw>
+<doc>Performs a comprehensive check of all dependencies</doc>
+<tag>comprehensive</tag>
+<tag>setup</tag>
+<status status="PASS" start="2026-01-29T16:13:33.782271" elapsed="3.060461"/>
+</test>
+<doc>Environment Setup Verification - Validates Python, Robot Framework, and SeleniumLibrary</doc>
+<status status="PASS" start="2026-01-29T16:13:28.850003" elapsed="7.993729"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="1" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">comprehensive</stat>
+<stat pass="1" fail="0" skip="0">python</stat>
+<stat pass="1" fail="0" skip="0">robotframework</stat>
+<stat pass="1" fail="0" skip="0">selenium</stat>
+<stat pass="5" fail="0" skip="0">setup</stat>
+<stat pass="1" fail="0" skip="0">version</stat>
 </tag>
 <suite>
-<stat name="RobotFramework" id="s1" pass="3" fail="1" skip="0">RobotFramework</stat>
-<stat name="TC001KeyWords" id="s1-s1" pass="1" fail="0" skip="0">RobotFramework.TC001KeyWords</stat>
-<stat name="TC002 DataDrivenTest" id="s1-s2" pass="2" fail="0" skip="0">RobotFramework.TC002 DataDrivenTest</stat>
-<stat name="TC003 Logging" id="s1-s3" pass="0" fail="1" skip="0">RobotFramework.TC003 Logging</stat>
+<stat name="Q2 Environment Setup Verification" id="s1" pass="5" fail="0" skip="0">Q2 Environment Setup Verification</stat>
 </suite>
 </statistics>
 <errors>

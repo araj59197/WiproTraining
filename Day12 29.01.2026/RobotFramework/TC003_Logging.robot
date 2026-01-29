@@ -14,8 +14,10 @@ TC003_Logging.robot
     Wait Until Element Is Visible    xpath=//input[@placeholder='Username']    10s
     Input Text                       xpath=//input[@placeholder='Username']    ${username}
     Input Text                       xpath=//input[@placeholder='Password']    ${password}
+    Capture Page Screenshot          beforelogin.png
     Click Button                     xpath=//button[@type='submit']
-    Sleep                            5s
-    Location Should Contain          /dashboard
+    Wait Until Location Contains     /dashboard                                15s
+    Wait Until Element Is Visible    xpath=//h6[normalize-space()='Dashboard']    15s
+    Capture Page Screenshot          afterlogin.png
     Log                              Login Successful - Dashboard Loaded!
     Close Browser

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.6 on win32)" generated="2026-01-29T16:02:32.306260" rpa="false" schemaversion="5">
+<suite id="s1" name="TC003 Logging" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\RobotFramework\TC003_Logging.robot">
+<test id="s1-t1" name="TC003_Logging.robot" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-29T16:02:32.903179" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-29T16:02:32.903179" elapsed="9.007050"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-29T16:02:41.911227" elapsed="0.039926"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder='Username']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T16:02:41.952143" elapsed="1.612997"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T16:02:43.566157" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@placeholder='Username']'.</msg>
+<arg>xpath=//input[@placeholder='Username']</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T16:02:43.565140" elapsed="0.142068"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T16:02:43.709211" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@placeholder='Password']'.</msg>
+<arg>xpath=//input[@placeholder='Password']</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T16:02:43.708211" elapsed="0.166800"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-29T16:02:44.055755" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="beforelogin.png"&gt;&lt;img src="beforelogin.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>beforelogin.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-29T16:02:43.876006" elapsed="0.179749"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-29T16:02:44.056750" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T16:02:44.056750" elapsed="7.745170"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/dashboard</arg>
+<arg>15s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-01-29T16:02:51.801920" elapsed="0.010010"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h6[normalize-space()='Dashboard']</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T16:02:51.812925" elapsed="1.944945"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-29T16:02:54.366141" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="afterlogin.png"&gt;&lt;img src="afterlogin.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>afterlogin.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-29T16:02:53.758853" elapsed="0.607288"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:02:54.368137" level="INFO">Login Successful - Dashboard Loaded!</msg>
+<arg>Login Successful - Dashboard Loaded!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:02:54.367141" elapsed="0.004001"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-29T16:02:54.372140" elapsed="2.237455"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:02:32.901193" elapsed="23.709208"/>
+</test>
+<status status="PASS" start="2026-01-29T16:02:32.309255" elapsed="24.302144"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC003 Logging" id="s1" pass="1" fail="0" skip="0">TC003 Logging</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
