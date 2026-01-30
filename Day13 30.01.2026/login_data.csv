@@ -1,0 +1,3 @@
+email,password,expected
+araj59197@gmail.com,Aditya7091@#,success
+invalid_user@gmail.com,wrongpass,failure

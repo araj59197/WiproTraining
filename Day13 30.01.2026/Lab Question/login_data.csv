@@ -1,0 +1,3 @@
+Admin,admin123,success
+InvalidUser,admin123,failure
+Admin,wrongpassword,failure
