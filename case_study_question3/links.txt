@@ -1,0 +1,3 @@
+python .\case_study_question3\app.py -- 1st
+ pytest .\case_study_question3\ -v --html=report.html -- 2nd
+ robot .\case_study_question3\robot_tests.robot -- 3rd

@@ -1,0 +1,2 @@
+python .\case_study_question2\app.py -- 1st
+pytest .\case_study_question2\ -v --2nd

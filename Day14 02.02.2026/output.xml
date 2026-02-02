@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.6 on win32)" generated="2026-02-02T12:52:25.009097" rpa="false" schemaversion="5">
+<suite id="s1" name="TC009 FlaskApi" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day14 02.02.2026\TC009_FlaskApi.robot">
+<test id="s1-t1" name="verify Get_users" line="9">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.370971" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:52:25.370971" elapsed="0.000999"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.384028" level="INFO">GET Request : url=http://127.0.0.1:5000/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-02T12:52:25.385029" level="INFO">GET Response : url=http://127.0.0.1:5000/users 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.6', 'Date': 'Mon, 02 Feb 2026 07:22:25 GMT', 'Content-Type': 'application/json', 'Content-Length': '142', 'Connection': 'close'} 
+ body=[
+  {
+    "id": 1,
+    "name": "Aditya Kumar"
+  },
+  {
+    "id": 2,
+    "name": "Rama"
+  },
+  {
+    "id": 3,
+    "name": "Hemant Singh"
+  }
+]
+ 
+ </msg>
+<msg time="2026-02-02T12:52:25.385029" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.371970" elapsed="0.013059"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-02-02T12:52:25.387030" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.385029" elapsed="0.002001"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.387030" elapsed="0.001992"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:52:25.366948" elapsed="0.022074"/>
+</test>
+<test id="s1-t2" name="verify Get_user_by_id" line="15">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.392039" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:52:25.392039" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.400020" level="INFO">GET Request : url=http://127.0.0.1:5000/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-02T12:52:25.400020" level="INFO">GET Response : url=http://127.0.0.1:5000/users/1 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.6', 'Date': 'Mon, 02 Feb 2026 07:22:25 GMT', 'Content-Type': 'application/json', 'Content-Length': '40', 'Connection': 'close'} 
+ body={
+  "id": 1,
+  "name": "Aditya Kumar"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:52:25.401035" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users/1</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.393041" elapsed="0.007994"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-02-02T12:52:25.402020" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.401035" elapsed="0.000985"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.403022" elapsed="0.001011"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:52:25.391028" elapsed="0.014007"/>
+</test>
+<test id="s1-t3" name="verify Get_user_not_found" line="21">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.407033" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:52:25.407033" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.413726" level="INFO">GET Request : url=http://127.0.0.1:5000/users/999 
+ path_url=/users/999 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-02T12:52:25.413726" level="INFO">GET Response : url=http://127.0.0.1:5000/users/999 
+ status=404, reason=NOT FOUND 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.6', 'Date': 'Mon, 02 Feb 2026 07:22:25 GMT', 'Content-Type': 'application/json', 'Content-Length': '34', 'Connection': 'close'} 
+ body={
+  "message": "user not found"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:52:25.414276" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users/999</arg>
+<arg>expected_status=404</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.408069" elapsed="0.006207"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-02-02T12:52:25.416283" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>404</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.414276" elapsed="0.002007"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.417273" elapsed="0.002010"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:52:25.406022" elapsed="0.014270"/>
+</test>
+<test id="s1-t4" name="verify Create_user" line="27">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.422277" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:52:25.422277" elapsed="0.000989"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-02T12:52:25.424267" level="INFO">${user_data} = {'name': 'Hemant Singh'}</msg>
+<var>${user_data}</var>
+<arg>name=Hemant Singh</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.423266" elapsed="0.001001"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.430268" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '24', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Hemant Singh"}' 
+ </msg>
+<msg time="2026-02-02T12:52:25.430268" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+ status=201, reason=CREATED 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.6', 'Date': 'Mon, 02 Feb 2026 07:22:25 GMT', 'Content-Type': 'application/json', 'Content-Length': '40', 'Connection': 'close'} 
+ body={
+  "id": 4,
+  "name": "Hemant Singh"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:52:25.431271" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users</arg>
+<arg>json=${user_data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.424267" elapsed="0.007004"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-02-02T12:52:25.433278" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.431271" elapsed="0.002007"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.434282" elapsed="0.001992"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:52:25.421288" elapsed="0.015987"/>
+</test>
+<test id="s1-t5" name="verify Update_user" line="34">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.439286" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:52:25.439286" elapsed="0.001000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-02T12:52:25.441285" level="INFO">${updated_data} = {'name': 'Aditya Kumar'}</msg>
+<var>${updated_data}</var>
+<arg>name=Aditya Kumar</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.440286" elapsed="0.000999"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.446285" level="INFO">PUT Request : url=http://127.0.0.1:5000/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '24', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Aditya Kumar"}' 
+ </msg>
+<msg time="2026-02-02T12:52:25.447285" level="INFO">PUT Response : url=http://127.0.0.1:5000/users/1 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.6', 'Date': 'Mon, 02 Feb 2026 07:22:25 GMT', 'Content-Type': 'application/json', 'Content-Length': '40', 'Connection': 'close'} 
+ body={
+  "id": 1,
+  "name": "Aditya Kumar"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:52:25.447285" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users/1</arg>
+<arg>json=${updated_data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.441285" elapsed="0.006000"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-02-02T12:52:25.448285" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.447285" elapsed="0.002000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.449285" elapsed="0.000990"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:52:25.438276" elapsed="0.012994"/>
+</test>
+<test id="s1-t6" name="verify update_partial_user" line="41">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.454269" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:52:25.453291" elapsed="0.000978"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-02T12:52:25.456282" level="INFO">${partial_data} = {'name': 'Aditya Singh'}</msg>
+<var>${partial_data}</var>
+<arg>name=Aditya Singh</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.455305" elapsed="0.000977"/>
+</kw>
+<kw name="PATCH On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.462275" level="INFO">PATCH Request : url=http://127.0.0.1:5000/users/2 
+ path_url=/users/2 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '24', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Aditya Singh"}' 
+ </msg>
+<msg time="2026-02-02T12:52:25.463287" level="INFO">PATCH Response : url=http://127.0.0.1:5000/users/2 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.6', 'Date': 'Mon, 02 Feb 2026 07:22:25 GMT', 'Content-Type': 'application/json', 'Content-Length': '40', 'Connection': 'close'} 
+ body={
+  "id": 2,
+  "name": "Aditya Singh"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:52:25.463287" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users/2</arg>
+<arg>json=${partial_data}</arg>
+<doc>Sends a PATCH request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.456282" elapsed="0.007005"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-02-02T12:52:25.465267" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.463287" elapsed="0.001980"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.465267" elapsed="0.002019"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:52:25.452278" elapsed="0.015008"/>
+</test>
+<test id="s1-t7" name="verify Delete_user" line="48">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.469276" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:52:25.469276" elapsed="0.001005"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:52:25.476552" level="INFO">DELETE Request : url=http://127.0.0.1:5000/users/3 
+ path_url=/users/3 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2026-02-02T12:52:25.477531" level="INFO">DELETE Response : url=http://127.0.0.1:5000/users/3 
+ status=204, reason=NO CONTENT 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.6', 'Date': 'Mon, 02 Feb 2026 07:22:25 GMT', 'Content-Type': 'application/json', 'Connection': 'close'} 
+ body=None 
+ </msg>
+<msg time="2026-02-02T12:52:25.477531" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users/3</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.470281" elapsed="0.007250"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-02-02T12:52:25.479547" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>204</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.478550" elapsed="0.000997"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>User deleted successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T12:52:25.479547" elapsed="0.001005"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:52:25.468287" elapsed="0.012265"/>
+</test>
+<status status="PASS" start="2026-02-02T12:52:25.012104" elapsed="0.470426"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC009 FlaskApi" id="s1" pass="7" fail="0" skip="0">TC009 FlaskApi</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

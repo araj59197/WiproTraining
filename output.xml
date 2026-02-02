@@ -1,818 +1,648 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.12.6 on win32)" generated="2026-01-29T16:13:28.847007" rpa="false" schemaversion="5">
-<suite id="s1" name="Q2 Environment Setup Verification" source="c:\Users\aditya\Desktop\Wipro_pre_Skilling\Day12 29.01.2026\Lab Question\Q2_Environment_Setup_Verification.robot">
-<test id="s1-t1" name="Test Case 1 - Verify Python Installation" line="10">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.552399" elapsed="0.000000"/>
+<robot generator="Robot 7.4.1 (Python 3.12.6 on win32)" generated="2026-02-02T17:22:27.538559" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Tests" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\case_study_question3\robot_tests.robot">
+<test id="s1-t1" name="Patient Registration - Valid Data" line="11">
+<kw name="Open Browser And Navigate">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:27.915738" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:5002'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-02T17:22:27.914722" elapsed="1.517788"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Verifying Python Installation</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.553381" elapsed="0.001023"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-02T17:22:29.432510" elapsed="0.026599"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.555401" elapsed="0.001000"/>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Patient Registration</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:22:29.459109" elapsed="0.044574"/>
 </kw>
-<try>
-<branch type="TRY">
-<kw name="Run Process" owner="Process">
-<msg time="2026-01-29T16:13:29.557400" level="INFO">Starting process:
-python --version</msg>
-<msg time="2026-01-29T16:13:29.569382" level="INFO">Waiting for process to complete.</msg>
-<msg time="2026-01-29T16:13:29.614396" level="INFO">Process completed.</msg>
-<msg time="2026-01-29T16:13:29.614396" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
-<var>${result}</var>
-<arg>python</arg>
-<arg>--version</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.556401" elapsed="0.057995"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:30.505321" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:29.503683" elapsed="1.001638"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:29.616386" level="INFO">Python command output: Python 3.12.6</msg>
-<arg>Python command output: ${result.stdout}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.615386" elapsed="0.001000"/>
+<status status="PASS" start="2026-02-02T17:22:27.914722" elapsed="2.590599"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Python Status: ${result.stdout}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.616386" elapsed="0.001000"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:32.505627" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:30.505321" elapsed="2.000306"/>
 </kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2026-01-29T16:13:29.619404" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${result.rc}</arg>
-<arg>0</arg>
-<arg>msg=Python is not installed or not in PATH</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.618404" elapsed="0.001000"/>
+<kw name="Input Patient Details">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:32.506619" level="INFO">Typing text 'Alice Johnson' into text field 'id=name'.</msg>
+<arg>id=name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:22:32.506619" elapsed="0.101531"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${result.stdout}</arg>
-<arg>Python</arg>
-<arg>msg=Python command did not return expected output</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.619404" elapsed="0.001999"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:33.109085" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:32.608150" elapsed="0.500935"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:29.621403" level="INFO">Python is installed and working correctly</msg>
-<arg>Python is installed and working correctly</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.621403" elapsed="0.000000"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:33.109085" level="INFO">Typing text '28' into text field 'id=age'.</msg>
+<arg>id=age</arg>
+<arg>${age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:22:33.109085" elapsed="0.068759"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Python is installed and working correctly</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.621403" elapsed="0.000981"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:33.678220" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:33.177844" elapsed="0.500376"/>
 </kw>
-<status status="PASS" start="2026-01-29T16:13:29.556401" elapsed="0.065983"/>
-</branch>
-<branch type="EXCEPT" assign="${error}">
-<kw name="Log" owner="BuiltIn">
-<arg>Python Installation Check FAILED: ${error}</arg>
-<arg>level=ERROR</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:29.623408" elapsed="0.000000"/>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:33.679224" level="INFO">Selecting 'Female' from radio button 'gender'.</msg>
+<arg>gender</arg>
+<arg>Female</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="PASS" start="2026-02-02T17:22:33.679224" elapsed="0.070792"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Python Installation Check FAILED</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:29.623408" elapsed="0.000000"/>
+<arg>'${gender}' == 'Male'</arg>
+<arg>Select Radio Button</arg>
+<arg>gender</arg>
+<arg>Male</arg>
+<arg>ELSE</arg>
+<arg>Select Radio Button</arg>
+<arg>gender</arg>
+<arg>Female</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-02T17:22:33.678220" elapsed="0.071796"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Error: ${error}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:29.623408" elapsed="0.000000"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:34.250395" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:33.750016" elapsed="0.500379"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\nPlease install Python from https://www.python.org/downloads/</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:29.623408" elapsed="0.000000"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:34.250395" level="INFO">Typing text '9876543210' into text field 'id=contact'.</msg>
+<arg>id=contact</arg>
+<arg>${contact}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:22:34.250395" elapsed="0.077622"/>
 </kw>
-<kw name="Fail" owner="BuiltIn">
-<arg>Python is not properly installed: ${error}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:29.623408" elapsed="0.000000"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:34.828093" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:34.328017" elapsed="0.500076"/>
 </kw>
-<status status="NOT RUN" start="2026-01-29T16:13:29.622384" elapsed="0.001024"/>
-</branch>
-<status status="PASS" start="2026-01-29T16:13:29.556401" elapsed="0.068002"/>
-</try>
-<doc>Verifies that Python is installed and accessible</doc>
-<tag>python</tag>
-<tag>setup</tag>
-<status status="PASS" start="2026-01-29T16:13:29.549382" elapsed="0.075021"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:34.828093" level="INFO">Typing text 'Asthma' into text field 'id=disease'.</msg>
+<arg>id=disease</arg>
+<arg>${disease}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:22:34.828093" elapsed="0.076331"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:35.405402" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:34.904424" elapsed="0.500978"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:35.405402" level="INFO">Selecting options from selection list 'id=doctor' by label Dr. Smith.</msg>
+<arg>id=doctor</arg>
+<arg>${doctor}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-02T17:22:35.405402" elapsed="0.097689"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:36.003477" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:35.503091" elapsed="0.500386"/>
+</kw>
+<arg>Alice Johnson</arg>
+<arg>28</arg>
+<arg>Female</arg>
+<arg>9876543210</arg>
+<arg>Asthma</arg>
+<arg>Dr. Smith</arg>
+<status status="PASS" start="2026-02-02T17:22:32.505627" elapsed="3.497850"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:38.004825" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:36.003477" elapsed="2.001348"/>
+</kw>
+<kw name="Submit Form">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:38.005825" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:22:38.005825" elapsed="0.071105"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:40.077057" level="INFO">Slept 2 seconds.</msg>
+<arg>${DELAY}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:38.076930" elapsed="2.000127"/>
+</kw>
+<status status="PASS" start="2026-02-02T17:22:38.005825" elapsed="2.071232"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:42.078768" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:40.078065" elapsed="2.000703"/>
+</kw>
+<kw name="Verify Registration Success">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Registration Successful</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:22:42.079775" elapsed="0.011990"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:42.108558" level="INFO">Current page contains text 'Alice Johnson'.</msg>
+<arg>${expected_name}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-02T17:22:42.091765" elapsed="0.016793"/>
+</kw>
+<arg>Alice Johnson</arg>
+<status status="PASS" start="2026-02-02T17:22:42.078768" elapsed="0.029790"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:44.110353" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:42.109557" elapsed="2.000796"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-02T17:22:44.111470" elapsed="2.259636"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2026-02-02T17:22:27.913120" elapsed="18.458967"/>
 </test>
-<test id="s1-t2" name="Test Case 2 - Verify Robot Framework Installation" line="43">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.627389" elapsed="0.001092"/>
+<test id="s1-t2" name="Patient Registration - Multiple Patients" line="23">
+<kw name="Open Browser And Navigate">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:46.374088" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:5002'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-02T17:22:46.374088" elapsed="1.536931"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Verifying Robot Framework Installation</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.629619" elapsed="0.000983"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-02T17:22:47.911019" elapsed="0.061356"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.630602" elapsed="0.001003"/>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Patient Registration</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:22:47.972375" elapsed="0.014002"/>
 </kw>
-<try>
-<branch type="TRY">
-<kw name="Run Process" owner="Process">
-<msg time="2026-01-29T16:13:29.632625" level="INFO">Starting process:
-robot --version</msg>
-<msg time="2026-01-29T16:13:29.643603" level="INFO">Waiting for process to complete.</msg>
-<msg time="2026-01-29T16:13:30.416741" level="INFO">Process completed.</msg>
-<msg time="2026-01-29T16:13:30.416741" level="INFO">${result} = &lt;result object with rc 251&gt;</msg>
-<var>${result}</var>
-<arg>robot</arg>
-<arg>--version</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2026-01-29T16:13:29.632625" elapsed="0.784116"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:48.987959" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:47.986377" elapsed="1.001582"/>
 </kw>
-<kw name="Set Variable If" owner="BuiltIn">
-<msg time="2026-01-29T16:13:30.419761" level="INFO">${output} = Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
-<var>${output}</var>
-<arg>'${result.stderr}' != '${EMPTY}'</arg>
-<arg>${result.stderr}</arg>
-<arg>${result.stdout}</arg>
-<doc>Sets variable based on the given condition.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.417759" elapsed="0.002002"/>
+<status status="PASS" start="2026-02-02T17:22:46.373088" elapsed="2.614871"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:30.420759" level="INFO">Robot Framework command output: Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
-<arg>Robot Framework command output: ${output}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.419761" elapsed="0.000998"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:50.990482" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:48.988799" elapsed="2.001683"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${output}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.420759" elapsed="0.000996"/>
+<kw name="Input Patient Details">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:50.992066" level="INFO">Typing text 'Bob Williams' into text field 'id=name'.</msg>
+<arg>id=name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:22:50.992066" elapsed="0.095415"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${output}</arg>
-<arg>Robot Framework</arg>
-<arg>msg=Robot Framework is not properly installed</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.421755" elapsed="0.001004"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:51.588337" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:51.087481" elapsed="0.500856"/>
 </kw>
-<kw name="Get Line" owner="String">
-<msg time="2026-01-29T16:13:30.422759" level="INFO">${version_line} = Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
-<var>${version_line}</var>
-<arg>${output}</arg>
-<arg>0</arg>
-<doc>Returns the specified line from the given ``string``.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.422759" elapsed="0.000996"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:51.589145" level="INFO">Typing text '55' into text field 'id=age'.</msg>
+<arg>id=age</arg>
+<arg>${age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:22:51.588337" elapsed="0.071406"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:30.423755" level="INFO">Robot Framework Version: Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
-<arg>Robot Framework Version: ${version_line}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.423755" elapsed="0.000000"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:52.160960" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:51.660744" elapsed="0.500216"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Robot Framework: ${version_line}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.423755" elapsed="0.001002"/>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:52.161739" level="INFO">Selecting 'Male' from radio button 'gender'.</msg>
+<arg>gender</arg>
+<arg>Male</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="PASS" start="2026-02-02T17:22:52.161739" elapsed="0.074797"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:30.425759" level="INFO">Robot Framework is installed and working correctly</msg>
-<arg>Robot Framework is installed and working correctly</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.424757" elapsed="0.001002"/>
+<arg>'${gender}' == 'Male'</arg>
+<arg>Select Radio Button</arg>
+<arg>gender</arg>
+<arg>Male</arg>
+<arg>ELSE</arg>
+<arg>Select Radio Button</arg>
+<arg>gender</arg>
+<arg>Female</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-02T17:22:52.160960" elapsed="0.075576"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Robot Framework is installed and working correctly</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.425759" elapsed="0.001003"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:52.738366" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:52.237539" elapsed="0.500827"/>
 </kw>
-<status status="PASS" start="2026-01-29T16:13:29.631605" elapsed="0.795157"/>
-</branch>
-<branch type="EXCEPT" assign="${error}">
-<kw name="Log" owner="BuiltIn">
-<arg>Robot Framework Installation Check FAILED: ${error}</arg>
-<arg>level=ERROR</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:30.426762" elapsed="0.000000"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:52.738366" level="INFO">Typing text '9876543211' into text field 'id=contact'.</msg>
+<arg>id=contact</arg>
+<arg>${contact}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:22:52.738366" elapsed="0.086206"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Robot Framework Installation Check FAILED</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:30.426762" elapsed="0.000000"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:53.325720" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:52.825562" elapsed="0.500158"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Error: ${error}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:30.426762" elapsed="0.000993"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:53.325720" level="INFO">Typing text 'Heart Disease' into text field 'id=disease'.</msg>
+<arg>id=disease</arg>
+<arg>${disease}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:22:53.325720" elapsed="0.071840"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\nPlease install Robot Framework: pip install robotframework</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:30.427755" elapsed="0.000000"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:53.898986" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:53.397560" elapsed="0.501426"/>
 </kw>
-<kw name="Fail" owner="BuiltIn">
-<arg>Robot Framework is not properly installed: ${error}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:30.427755" elapsed="0.000000"/>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:53.898986" level="INFO">Selecting options from selection list 'id=doctor' by label Dr. Johnson.</msg>
+<arg>id=doctor</arg>
+<arg>${doctor}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-02T17:22:53.898986" elapsed="0.088425"/>
 </kw>
-<status status="NOT RUN" start="2026-01-29T16:13:30.426762" elapsed="0.000993"/>
-</branch>
-<status status="PASS" start="2026-01-29T16:13:29.631605" elapsed="0.796150"/>
-</try>
-<doc>Verifies that Robot Framework is installed</doc>
-<tag>robotframework</tag>
-<tag>setup</tag>
-<status status="PASS" start="2026-01-29T16:13:29.625403" elapsed="0.803068"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:54.487697" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:53.987411" elapsed="0.500286"/>
+</kw>
+<arg>Bob Williams</arg>
+<arg>55</arg>
+<arg>Male</arg>
+<arg>9876543211</arg>
+<arg>Heart Disease</arg>
+<arg>Dr. Johnson</arg>
+<status status="PASS" start="2026-02-02T17:22:50.991042" elapsed="3.497184"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:56.489396" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:54.488226" elapsed="2.001170"/>
+</kw>
+<kw name="Submit Form">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:22:56.491775" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:22:56.491191" elapsed="0.071120"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:22:58.563648" level="INFO">Slept 2 seconds.</msg>
+<arg>${DELAY}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:56.563312" elapsed="2.000336"/>
+</kw>
+<status status="PASS" start="2026-02-02T17:22:56.490193" elapsed="2.073455"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:00.565630" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:22:58.563648" elapsed="2.001982"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:00.565630" level="INFO">Opening url 'http://127.0.0.1:5002'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-02-02T17:23:00.565630" elapsed="0.028998"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:02.597223" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:00.595628" elapsed="2.001595"/>
+</kw>
+<kw name="Input Patient Details">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:02.598222" level="INFO">Typing text 'Charlie Brown' into text field 'id=name'.</msg>
+<arg>id=name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:23:02.598222" elapsed="0.116865"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:03.217005" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:02.716082" elapsed="0.500923"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:03.217005" level="INFO">Typing text '40' into text field 'id=age'.</msg>
+<arg>id=age</arg>
+<arg>${age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:23:03.217005" elapsed="0.061573"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:03.779847" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:03.278578" elapsed="0.501269"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:03.779847" level="INFO">Selecting 'Male' from radio button 'gender'.</msg>
+<arg>gender</arg>
+<arg>Male</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="PASS" start="2026-02-02T17:23:03.779847" elapsed="0.056043"/>
+</kw>
+<arg>'${gender}' == 'Male'</arg>
+<arg>Select Radio Button</arg>
+<arg>gender</arg>
+<arg>Male</arg>
+<arg>ELSE</arg>
+<arg>Select Radio Button</arg>
+<arg>gender</arg>
+<arg>Female</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-02T17:23:03.779847" elapsed="0.056043"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:04.337720" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:03.836890" elapsed="0.500830"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:04.338719" level="INFO">Typing text '9876543212' into text field 'id=contact'.</msg>
+<arg>id=contact</arg>
+<arg>${contact}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:23:04.337720" elapsed="0.071498"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:04.910792" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:04.409218" elapsed="0.501574"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:04.910792" level="INFO">Typing text 'Arthritis' into text field 'id=disease'.</msg>
+<arg>id=disease</arg>
+<arg>${disease}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:23:04.910792" elapsed="0.071705"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:05.482962" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:04.982497" elapsed="0.500465"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:05.482962" level="INFO">Selecting options from selection list 'id=doctor' by label Dr. Williams.</msg>
+<arg>id=doctor</arg>
+<arg>${doctor}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-02T17:23:05.482962" elapsed="0.071736"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:06.055496" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:05.554698" elapsed="0.500798"/>
+</kw>
+<arg>Charlie Brown</arg>
+<arg>40</arg>
+<arg>Male</arg>
+<arg>9876543212</arg>
+<arg>Arthritis</arg>
+<arg>Dr. Williams</arg>
+<status status="PASS" start="2026-02-02T17:23:02.597223" elapsed="3.458273"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:08.056312" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:06.056293" elapsed="2.000019"/>
+</kw>
+<kw name="Submit Form">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:08.057311" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:23:08.057311" elapsed="0.062020"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:10.121022" level="INFO">Slept 2 seconds.</msg>
+<arg>${DELAY}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:08.119331" elapsed="2.001691"/>
+</kw>
+<status status="PASS" start="2026-02-02T17:23:08.056312" elapsed="2.064710"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:12.122970" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:10.122064" elapsed="2.000906"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-02T17:23:12.123665" elapsed="2.204818"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-02-02T17:22:46.372087" elapsed="27.956396"/>
 </test>
-<test id="s1-t3" name="Test Case 3 - Verify SeleniumLibrary Import" line="80">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.430032" elapsed="0.001014"/>
+<test id="s1-t3" name="Verify Form Fields" line="39">
+<kw name="Open Browser And Navigate">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:14.330490" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:5002'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-02T17:23:14.330490" elapsed="1.701371"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Verifying SeleniumLibrary</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.432043" elapsed="0.000000"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-02T17:23:16.031861" elapsed="0.057233"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.433045" elapsed="0.001003"/>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Patient Registration</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:23:16.089094" elapsed="0.013005"/>
 </kw>
-<try>
-<branch type="TRY">
-<kw name="Run Process" owner="Process">
-<msg time="2026-01-29T16:13:30.435043" level="INFO">Starting process:
-python -c "import SeleniumLibrary; print(f'SeleniumLibrary {SeleniumLibrary.__version__}')"</msg>
-<msg time="2026-01-29T16:13:30.447134" level="INFO">Waiting for process to complete.</msg>
-<msg time="2026-01-29T16:13:31.821115" level="INFO">Process completed.</msg>
-<msg time="2026-01-29T16:13:31.821115" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
-<var>${result}</var>
-<arg>python</arg>
-<arg>-c</arg>
-<arg>import SeleniumLibrary; print(f'SeleniumLibrary {SeleniumLibrary.__version__}')</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2026-01-29T16:13:30.434048" elapsed="1.387618"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:17.103374" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:16.103093" elapsed="1.000281"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:31.822261" level="INFO">SeleniumLibrary check output: SeleniumLibrary 6.8.0</msg>
-<arg>SeleniumLibrary check output: ${result.stdout}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.821710" elapsed="0.000551"/>
+<status status="PASS" start="2026-02-02T17:23:14.330490" elapsed="2.772884"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${result.stdout}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.823259" elapsed="0.000998"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:19.104542" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:17.103374" elapsed="2.001168"/>
 </kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2026-01-29T16:13:31.825266" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${result.rc}</arg>
-<arg>0</arg>
-<arg>msg=SeleniumLibrary is not installed</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.824257" elapsed="0.001009"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:19.116407" level="INFO">Current page contains element 'id=name'.</msg>
+<arg>id=name</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:23:19.105597" elapsed="0.010810"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-29T16:13:31.826257" level="INFO">${library_status} = SeleniumLibrary imported successfully</msg>
-<var>${library_status}</var>
-<arg>SeleniumLibrary imported successfully</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.826257" elapsed="0.000000"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:19.126408" level="INFO">Current page contains element 'id=age'.</msg>
+<arg>id=age</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:23:19.117415" elapsed="0.008993"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:31.827255" level="INFO">SeleniumLibrary imported successfully</msg>
-<arg>${library_status}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.826257" elapsed="0.000998"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:19.137402" level="INFO">Current page contains element 'id=male'.</msg>
+<arg>id=male</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:23:19.127403" elapsed="0.009999"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${library_status}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.827255" elapsed="0.001003"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:19.147347" level="INFO">Current page contains element 'id=female'.</msg>
+<arg>id=female</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:23:19.138405" elapsed="0.008942"/>
 </kw>
-<kw name="Get Selenium Timeout" owner="SeleniumLibrary">
-<msg time="2026-01-29T16:13:31.829275" level="INFO">${timeout} = 5 seconds</msg>
-<var>${timeout}</var>
-<doc>Gets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.828258" elapsed="0.001048"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:19.158914" level="INFO">Current page contains element 'id=contact'.</msg>
+<arg>id=contact</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:23:19.147347" elapsed="0.011567"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:31.829306" level="INFO">Selenium Default Timeout: 5 seconds</msg>
-<arg>Selenium Default Timeout: ${timeout}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.829306" elapsed="0.000000"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:19.169576" level="INFO">Current page contains element 'id=disease'.</msg>
+<arg>id=disease</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:23:19.158914" elapsed="0.011652"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Selenium Default Timeout: ${timeout}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.829306" elapsed="0.001005"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:19.180563" level="INFO">Current page contains element 'id=doctor'.</msg>
+<arg>id=doctor</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:23:19.170566" elapsed="0.009997"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:31.831315" level="INFO">SeleniumLibrary is working correctly</msg>
-<arg>SeleniumLibrary is working correctly</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.830311" elapsed="0.001004"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:21.181577" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:19.180563" elapsed="2.001402"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>SeleniumLibrary is working correctly</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.831315" elapsed="0.001003"/>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-02T17:23:21.181965" elapsed="2.225235"/>
 </kw>
-<status status="PASS" start="2026-01-29T16:13:30.434048" elapsed="1.398270"/>
-</branch>
-<branch type="EXCEPT" assign="${error}">
-<kw name="Log" owner="BuiltIn">
-<arg>SeleniumLibrary Check FAILED: ${error}</arg>
-<arg>level=ERROR</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:31.833310" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>SeleniumLibrary Check FAILED</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:31.833310" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Error: ${error}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:31.833310" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\nPlease install SeleniumLibrary: pip install robotframework-seleniumlibrary</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:31.833310" elapsed="0.000000"/>
-</kw>
-<kw name="Fail" owner="BuiltIn">
-<arg>SeleniumLibrary is not properly installed: ${error}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:31.833310" elapsed="0.000996"/>
-</kw>
-<status status="NOT RUN" start="2026-01-29T16:13:31.832318" elapsed="0.001988"/>
-</branch>
-<status status="PASS" start="2026-01-29T16:13:30.434048" elapsed="1.400258"/>
-</try>
-<doc>Verifies that SeleniumLibrary can be imported successfully</doc>
-<tag>selenium</tag>
-<tag>setup</tag>
-<status status="PASS" start="2026-01-29T16:13:30.430032" elapsed="1.404274"/>
+<tag>smoke</tag>
+<status status="PASS" start="2026-02-02T17:23:14.329489" elapsed="9.078239"/>
 </test>
-<test id="s1-t4" name="Test Case 4 - Print Robot Framework Version Details" line="123">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.836297" elapsed="0.001019"/>
+<test id="s1-t4" name="View Patients List" line="53">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:23.409729" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:5002/patients'.</msg>
+<arg>${URL}/patients</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-02T17:23:23.409729" elapsed="1.354338"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Robot Framework Version Details</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.837316" elapsed="0.001000"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-02T17:23:24.765091" elapsed="0.047447"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.838316" elapsed="0.000996"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:26.814000" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:24.813533" elapsed="2.000467"/>
 </kw>
-<try>
-<branch type="TRY">
-<kw name="Run Process" owner="Process">
-<msg time="2026-01-29T16:13:31.840302" level="INFO">Starting process:
-robot --version</msg>
-<msg time="2026-01-29T16:13:31.844310" level="INFO">Waiting for process to complete.</msg>
-<msg time="2026-01-29T16:13:32.696923" level="INFO">Process completed.</msg>
-<msg time="2026-01-29T16:13:32.697911" level="INFO">${result} = &lt;result object with rc 251&gt;</msg>
-<var>${result}</var>
-<arg>robot</arg>
-<arg>--version</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2026-01-29T16:13:31.840302" elapsed="0.857609"/>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Registered Patients</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:23:26.814000" elapsed="0.012341"/>
 </kw>
-<kw name="Set Variable If" owner="BuiltIn">
-<msg time="2026-01-29T16:13:32.699922" level="INFO">${rf_version} = Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
-<var>${rf_version}</var>
-<arg>'${result.stderr}' != '${EMPTY}'</arg>
-<arg>${result.stderr}</arg>
-<arg>${result.stdout}</arg>
-<doc>Sets variable based on the given condition.</doc>
-<status status="PASS" start="2026-01-29T16:13:32.697911" elapsed="0.002011"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:26.836397" level="INFO">Current page contains element 'id=patientsTable'.</msg>
+<arg>id=patientsTable</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-02T17:23:26.826341" elapsed="0.010056"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:32.700922" level="INFO">Full version output:
-Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
-<arg>Full version output:\n${rf_version}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:32.699922" elapsed="0.001000"/>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-02-02T17:23:26.847957" level="INFO">${row_count} = 24</msg>
+<var>${row_count}</var>
+<arg>xpath=//tr[@class='patient-row']</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-02-02T17:23:26.836397" elapsed="0.011560"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n${rf_version}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:32.700922" elapsed="0.001004"/>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${row_count} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-02-02T17:23:26.847957" elapsed="0.000590"/>
 </kw>
-<kw name="Run Process" owner="Process">
-<msg time="2026-01-29T16:13:32.702926" level="INFO">Starting process:
-python --version</msg>
-<msg time="2026-01-29T16:13:32.705914" level="INFO">Waiting for process to complete.</msg>
-<msg time="2026-01-29T16:13:32.749498" level="INFO">Process completed.</msg>
-<msg time="2026-01-29T16:13:32.749498" level="INFO">${python_result} = &lt;result object with rc 0&gt;</msg>
-<var>${python_result}</var>
-<arg>python</arg>
-<arg>--version</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2026-01-29T16:13:32.701926" elapsed="0.047572"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T17:23:28.849807" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T17:23:26.849106" elapsed="2.000701"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n${python_result.stdout}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:32.750503" elapsed="0.000998"/>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-02T17:23:28.849807" elapsed="2.240690"/>
 </kw>
-<kw name="Run Process" owner="Process">
-<msg time="2026-01-29T16:13:32.752505" level="INFO">Starting process:
-pip list | findstr robot</msg>
-<msg time="2026-01-29T16:13:32.763508" level="INFO">Waiting for process to complete.</msg>
-<msg time="2026-01-29T16:13:33.773161" level="INFO">Process completed.</msg>
-<msg time="2026-01-29T16:13:33.774171" level="INFO">${pip_result} = &lt;result object with rc 0&gt;</msg>
-<var>${pip_result}</var>
-<arg>pip</arg>
-<arg>list</arg>
-<arg>|</arg>
-<arg>findstr</arg>
-<arg>robot</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2026-01-29T16:13:32.751501" elapsed="1.022670"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:33.775223" level="INFO">Installed Robot packages:
-robotframework                 7.4.1
-robotframework-pythonlibcore   4.5.0
-robotframework-ride            2.2.2
-robotframework-seleniumlibrary 6.8.0</msg>
-<arg>Installed Robot packages:\n${pip_result.stdout}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.774171" elapsed="0.001052"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\nInstalled Robot Framework packages:</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.775223" elapsed="0.000954"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${pip_result.stdout}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.776177" elapsed="0.001995"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:33.779171" level="INFO">Version information retrieved successfully</msg>
-<arg>Version information retrieved successfully</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.778172" elapsed="0.001081"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\nVersion information retrieved successfully</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.779253" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2026-01-29T16:13:31.840302" elapsed="1.938951"/>
-</branch>
-<branch type="EXCEPT" assign="${error}">
-<kw name="Log" owner="BuiltIn">
-<arg>Could not retrieve all version details: ${error}</arg>
-<arg>level=WARN</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:33.780271" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Could not retrieve all version details</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:33.780271" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Error: ${error}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:33.780271" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2026-01-29T16:13:33.780271" elapsed="0.000000"/>
-</branch>
-<status status="PASS" start="2026-01-29T16:13:31.839312" elapsed="1.940959"/>
-</try>
-<doc>Displays detailed Robot Framework version information</doc>
-<tag>setup</tag>
-<tag>version</tag>
-<status status="PASS" start="2026-01-29T16:13:31.835312" elapsed="1.945944"/>
+<tag>smoke</tag>
+<status status="PASS" start="2026-02-02T17:23:23.408735" elapsed="7.682762"/>
 </test>
-<test id="s1-t5" name="Test Case 5 - Comprehensive Environment Check" line="159">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.783272" elapsed="0.000990"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Comprehensive Environment Check</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.785265" elapsed="0.001015"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.786280" elapsed="0.000997"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-01-29T16:13:33.788267" level="INFO">${all_checks_passed} = True</msg>
-<var>${all_checks_passed}</var>
-<arg>${True}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.787277" elapsed="0.000990"/>
-</kw>
-<try>
-<branch type="TRY">
-<kw name="Run Process" owner="Process">
-<msg time="2026-01-29T16:13:33.789265" level="INFO">Starting process:
-python --version</msg>
-<msg time="2026-01-29T16:13:33.793277" level="INFO">Waiting for process to complete.</msg>
-<msg time="2026-01-29T16:13:33.839296" level="INFO">Process completed.</msg>
-<msg time="2026-01-29T16:13:33.840312" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
-<var>${result}</var>
-<arg>python</arg>
-<arg>--version</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.789265" elapsed="0.051047"/>
-</kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2026-01-29T16:13:33.841311" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${result.rc}</arg>
-<arg>0</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.840312" elapsed="0.000999"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Python: PASS</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.841311" elapsed="0.001000"/>
-</kw>
-<status status="PASS" start="2026-01-29T16:13:33.789265" elapsed="0.053046"/>
-</branch>
-<branch type="EXCEPT">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Python: FAIL</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:33.843311" elapsed="0.000000"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${all_checks_passed}</var>
-<arg>${False}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:33.843311" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2026-01-29T16:13:33.842311" elapsed="0.001000"/>
-</branch>
-<status status="PASS" start="2026-01-29T16:13:33.788267" elapsed="0.055044"/>
-</try>
-<try>
-<branch type="TRY">
-<kw name="Run Process" owner="Process">
-<msg time="2026-01-29T16:13:33.844304" level="INFO">Starting process:
-robot --version</msg>
-<msg time="2026-01-29T16:13:33.847312" level="INFO">Waiting for process to complete.</msg>
-<msg time="2026-01-29T16:13:34.648525" level="INFO">Process completed.</msg>
-<msg time="2026-01-29T16:13:34.648525" level="INFO">${result} = &lt;result object with rc 251&gt;</msg>
-<var>${result}</var>
-<arg>robot</arg>
-<arg>--version</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2026-01-29T16:13:33.844304" elapsed="0.804221"/>
-</kw>
-<kw name="Set Variable If" owner="BuiltIn">
-<msg time="2026-01-29T16:13:34.651523" level="INFO">${output} = Robot Framework 7.4.1 (Python 3.12.6 on win32)</msg>
-<var>${output}</var>
-<arg>'${result.stderr}' != '${EMPTY}'</arg>
-<arg>${result.stderr}</arg>
-<arg>${result.stdout}</arg>
-<doc>Sets variable based on the given condition.</doc>
-<status status="PASS" start="2026-01-29T16:13:34.649523" elapsed="0.002000"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${output}</arg>
-<arg>Robot Framework</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-01-29T16:13:34.651523" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Robot Framework: PASS</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:34.652513" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2026-01-29T16:13:33.843311" elapsed="0.809202"/>
-</branch>
-<branch type="EXCEPT">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Robot Framework: FAIL</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:34.653524" elapsed="0.000000"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${all_checks_passed}</var>
-<arg>${False}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:34.653524" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2026-01-29T16:13:34.653524" elapsed="0.000000"/>
-</branch>
-<status status="PASS" start="2026-01-29T16:13:33.843311" elapsed="0.810213"/>
-</try>
-<try>
-<branch type="TRY">
-<kw name="Run Process" owner="Process">
-<msg time="2026-01-29T16:13:34.654516" level="INFO">Starting process:
-python -c "import SeleniumLibrary"</msg>
-<msg time="2026-01-29T16:13:34.666515" level="INFO">Waiting for process to complete.</msg>
-<msg time="2026-01-29T16:13:36.022333" level="INFO">Process completed.</msg>
-<msg time="2026-01-29T16:13:36.022333" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
-<var>${result}</var>
-<arg>python</arg>
-<arg>-c</arg>
-<arg>import SeleniumLibrary</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2026-01-29T16:13:34.654516" elapsed="1.367817"/>
-</kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2026-01-29T16:13:36.023334" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${result.rc}</arg>
-<arg>0</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2026-01-29T16:13:36.022333" elapsed="0.001001"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>SeleniumLibrary: PASS</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:36.023334" elapsed="0.000999"/>
-</kw>
-<status status="PASS" start="2026-01-29T16:13:34.654516" elapsed="1.369817"/>
-</branch>
-<branch type="EXCEPT">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>SeleniumLibrary: FAIL</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:36.025322" elapsed="0.000000"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${all_checks_passed}</var>
-<arg>${False}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:36.025322" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2026-01-29T16:13:36.024333" elapsed="0.000989"/>
-</branch>
-<status status="PASS" start="2026-01-29T16:13:34.653524" elapsed="1.371798"/>
-</try>
-<try>
-<branch type="TRY">
-<kw name="Run Process" owner="Process">
-<msg time="2026-01-29T16:13:36.026339" level="INFO">Starting process:
-pip --version</msg>
-<msg time="2026-01-29T16:13:36.037614" level="INFO">Waiting for process to complete.</msg>
-<msg time="2026-01-29T16:13:36.830186" level="INFO">Process completed.</msg>
-<msg time="2026-01-29T16:13:36.831200" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
-<var>${result}</var>
-<arg>pip</arg>
-<arg>--version</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2026-01-29T16:13:36.026339" elapsed="0.804861"/>
-</kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2026-01-29T16:13:36.832198" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${result.rc}</arg>
-<arg>0</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2026-01-29T16:13:36.831200" elapsed="0.000998"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>pip: PASS</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:36.833202" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2026-01-29T16:13:36.025322" elapsed="0.807880"/>
-</branch>
-<branch type="EXCEPT">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>pip: FAIL</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:36.834197" elapsed="0.000000"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${all_checks_passed}</var>
-<arg>${False}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:36.834197" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2026-01-29T16:13:36.833202" elapsed="0.000995"/>
-</branch>
-<status status="PASS" start="2026-01-29T16:13:36.025322" elapsed="0.808875"/>
-</try>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:36.834197" elapsed="0.001001"/>
-</kw>
-<if>
-<branch type="IF" condition="${all_checks_passed}">
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T16:13:36.837200" level="INFO">ALL ENVIRONMENT CHECKS PASSED</msg>
-<arg>ALL ENVIRONMENT CHECKS PASSED</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T16:13:36.836193" elapsed="0.001007"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>ALL ENVIRONMENT CHECKS PASSED</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:36.837200" elapsed="0.001004"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Environment is properly configured!</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:36.838204" elapsed="0.000992"/>
-</kw>
-<status status="PASS" start="2026-01-29T16:13:36.836193" elapsed="0.003003"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<arg>SOME ENVIRONMENT CHECKS FAILED</arg>
-<arg>level=ERROR</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:36.839196" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>SOME ENVIRONMENT CHECKS FAILED</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:36.840204" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Please review the errors above and install missing dependencies</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:36.840204" elapsed="0.000000"/>
-</kw>
-<kw name="Fail" owner="BuiltIn">
-<arg>Environment setup is incomplete</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-01-29T16:13:36.840204" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2026-01-29T16:13:36.839196" elapsed="0.001008"/>
-</branch>
-<status status="PASS" start="2026-01-29T16:13:36.836193" elapsed="0.004011"/>
-</if>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>========================================</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T16:13:36.841345" elapsed="0.000825"/>
-</kw>
-<doc>Performs a comprehensive check of all dependencies</doc>
-<tag>comprehensive</tag>
-<tag>setup</tag>
-<status status="PASS" start="2026-01-29T16:13:33.782271" elapsed="3.060461"/>
-</test>
-<doc>Environment Setup Verification - Validates Python, Robot Framework, and SeleniumLibrary</doc>
-<status status="PASS" start="2026-01-29T16:13:28.850003" elapsed="7.993729"/>
+<status status="PASS" start="2026-02-02T17:22:27.540561" elapsed="63.551933"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">comprehensive</stat>
-<stat pass="1" fail="0" skip="0">python</stat>
-<stat pass="1" fail="0" skip="0">robotframework</stat>
-<stat pass="1" fail="0" skip="0">selenium</stat>
-<stat pass="5" fail="0" skip="0">setup</stat>
-<stat pass="1" fail="0" skip="0">version</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="3" fail="0" skip="0">smoke</stat>
 </tag>
 <suite>
-<stat name="Q2 Environment Setup Verification" id="s1" pass="5" fail="0" skip="0">Q2 Environment Setup Verification</stat>
+<stat name="Robot Tests" id="s1" pass="4" fail="0" skip="0">Robot Tests</stat>
 </suite>
 </statistics>
 <errors>

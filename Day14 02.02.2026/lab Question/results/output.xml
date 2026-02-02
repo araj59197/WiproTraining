@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.6 on win32)" generated="2026-02-02T09:32:52.268285" rpa="false" schemaversion="5">
+<suite id="s1" name="Day14" source="C:\Users\aditya\Desktop\Wipro_pre_Skilling\Day14 02.02.2026\lab Question\Day14.robot">
+<kw name="Suite Setup Keyword" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n=== SUITE SETUP: Starting test suite ===</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.310411" elapsed="0.001007"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T09:32:52.311418" level="INFO">Suite setup executed.</msg>
+<arg>Suite setup executed.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.311418" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T09:32:52.310411" elapsed="0.001007"/>
+</kw>
+<test id="s1-t1" name="Smoke Test - Open Example" line="9">
+<kw name="Test Setup Keyword" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- TEST SETUP: Before each test ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.312416" elapsed="0.000999"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T09:32:52.313415" level="INFO">Test setup executed.</msg>
+<arg>Test setup executed.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.313415" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T09:32:52.312416" elapsed="0.000999"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T09:32:52.313415" level="INFO">This is a SMOKE test case.</msg>
+<arg>This is a SMOKE test case.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.313415" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>2</arg>
+<arg>2</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.313415" elapsed="0.000999"/>
+</kw>
+<kw name="Test Teardown Keyword" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- TEST TEARDOWN: After each test ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.314414" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T09:32:52.314414" level="INFO">Test teardown executed.</msg>
+<arg>Test teardown executed.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.314414" elapsed="0.001114"/>
+</kw>
+<status status="PASS" start="2026-02-02T09:32:52.314414" elapsed="0.001114"/>
+</kw>
+<tag>smoke</tag>
+<tag>ui</tag>
+<status status="PASS" start="2026-02-02T09:32:52.312416" elapsed="0.003112"/>
+</test>
+<test id="s1-t2" name="Regression Test - Simple Validation" line="14">
+<kw name="Test Setup Keyword" type="SETUP">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- TEST SETUP: Before each test ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.317297" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T09:32:52.317297" level="INFO">Test setup executed.</msg>
+<arg>Test setup executed.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.317297" elapsed="0.000987"/>
+</kw>
+<status status="PASS" start="2026-02-02T09:32:52.317297" elapsed="0.000987"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T09:32:52.318284" level="INFO">This is a REGRESSION test case.</msg>
+<arg>This is a REGRESSION test case.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.318284" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>Robot Framework</arg>
+<arg>Robot</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.318284" elapsed="0.001012"/>
+</kw>
+<kw name="Test Teardown Keyword" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- TEST TEARDOWN: After each test ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.320299" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T09:32:52.320299" level="INFO">Test teardown executed.</msg>
+<arg>Test teardown executed.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.320299" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T09:32:52.320299" elapsed="0.000000"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-02-02T09:32:52.316310" elapsed="0.004983"/>
+</test>
+<kw name="Suite Teardown Keyword" type="TEARDOWN">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n=== SUITE TEARDOWN: Finishing test suite ===</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.322283" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T09:32:52.322283" level="INFO">Suite teardown executed.</msg>
+<arg>Suite teardown executed.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T09:32:52.322283" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T09:32:52.321293" elapsed="0.002006"/>
+</kw>
+<doc>Demo suite: Suite/Test Setup &amp; Teardown + tags + CLI execution</doc>
+<status status="PASS" start="2026-02-02T09:32:52.269815" elapsed="0.053484"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+<stat pass="1" fail="0" skip="0">ui</stat>
+</tag>
+<suite>
+<stat name="Day14" id="s1" pass="2" fail="0" skip="0">Day14</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
