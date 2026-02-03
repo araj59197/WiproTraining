@@ -1,0 +1,93 @@
+{
+  "id": "login-test-automation",
+  "version": "2.0",
+  "name": "Question2_Login_Test",
+  "url": "https://opensource-demo.orangehrmlive.com",
+  "tests": [{
+    "id": "1",
+    "name": "Login Test - Valid Credentials",
+    "commands": [{
+      "id": "1",
+      "comment": "",
+      "command": "open",
+      "target": "/web/index.php/auth/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=input[name='username']", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "4",
+      "comment": "",
+      "command": "executeScript",
+      "target": "let e=document.querySelector(\"input[name='username']\"); e.value='Admin'; e.dispatchEvent(new Event('input', {bubbles:true}));",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=input[name='password']", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "6",
+      "comment": "",
+      "command": "executeScript",
+      "target": "let e=document.querySelector(\"input[name='password']\"); e.value='admin123'; e.dispatchEvent(new Event('input', {bubbles:true}));",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[@type='submit']",
+      "targets": [
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["css=button[type='submit']", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "8",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//h6",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "9",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//h6",
+      "targets": [],
+      "value": "Dashboard"
+    }]
+  }],
+  "suites": [{
+    "id": "suite1",
+    "name": "Login Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["1"]
+  }],
+  "urls": ["https://opensource-demo.orangehrmlive.com/"],
+  "plugins": []
+}

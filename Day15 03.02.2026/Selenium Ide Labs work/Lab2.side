@@ -1,0 +1,56 @@
+{
+  "id": "4fcb7aad-a65f-4f3e-807c-9df79f7a42ec",
+  "version": "2.0",
+  "name": "Lab2",
+  "url": "https://tutorialsninja.com/demo/",
+  "tests": [{
+    "id": "df7eff65-cae4-4120-8807-80be83146ed7",
+    "name": "tc002",
+    "commands": [{
+      "id": "d19e3ee7-d6b0-4126-b03f-6deb47ca5f45",
+      "comment": "",
+      "command": "open",
+      "target": "https://tutorialsninja.com/demo/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8e4efd3-5e28-4755-a38f-93158687dba0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "909x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b8d157e4-0440-49fc-9704-25d903d27607",
+      "comment": "",
+      "command": "click",
+      "target": "id=button-cart",
+      "targets": [
+        ["id=button-cart", "id"],
+        ["css=#button-cart", "css:finder"],
+        ["xpath=//button[@id='button-cart']", "xpath:attributes"],
+        ["xpath=//div[@id='product']/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add to Cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbe47146-f8b1-45ab-8774-11e3b11c9990",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3a77dc2d-2793-49f5-acda-e2e9cf3a9ec2",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["df7eff65-cae4-4120-8807-80be83146ed7"]
+  }],
+  "urls": ["https://tutorialsninja.com/demo/"],
+  "plugins": []
+}

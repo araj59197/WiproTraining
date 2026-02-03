@@ -1,0 +1,70 @@
+{
+  "id": "selenium-basics-test",
+  "version": "2.0",
+  "name": "Question1_Selenium_Basics",
+  "url": "https://opensource-demo.orangehrmlive.com",
+  "tests": [{
+    "id": "1",
+    "name": "Test Selenium Basics",
+    "commands": [{
+      "id": "1",
+      "comment": "",
+      "command": "open",
+      "target": "/web/index.php/auth/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.title",
+      "targets": [],
+      "value": "pageTitle"
+    }, {
+      "id": "4",
+      "comment": "",
+      "command": "echo",
+      "target": "Page Title: ${pageTitle}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "pageURL"
+    }, {
+      "id": "6",
+      "comment": "",
+      "command": "echo",
+      "target": "Current URL: ${pageURL}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "OrangeHRM",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "suite1",
+    "name": "Selenium Basics Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["1"]
+  }],
+  "urls": ["https://opensource-demo.orangehrmlive.com/"],
+  "plugins": []
+}
