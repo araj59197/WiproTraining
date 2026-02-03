@@ -1,0 +1,74 @@
+{
+  "id": "064282e6-a03c-4eb8-a653-20ddf0a1c3f6",
+  "version": "2.0",
+  "name": "lab1",
+  "url": "https://www.google.com/",
+  "tests": [{
+    "id": "dcdfa111-9c9c-4601-a43c-95f4d47fccef",
+    "name": "tc001",
+    "commands": [{
+      "id": "4e3f8d03-e55c-42fb-8469-03f298fe828d",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.google.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9506b91-a09d-428c-8e50-a3dcc9abd705",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "909x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b8599901-4444-4dda-99d4-c5a7ef1f1816",
+      "comment": "",
+      "command": "type",
+      "target": "id=APjFqb",
+      "targets": [
+        ["id=APjFqb", "id"],
+        ["name=q", "name"],
+        ["css=#APjFqb", "css:finder"],
+        ["xpath=//textarea[@id='APjFqb']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Testing Method"
+    }, {
+      "id": "2b61a002-de1b-42e6-93a7-80163a6c8ce3",
+      "comment": "",
+      "command": "type",
+      "target": "id=APjFqb",
+      "targets": [
+        ["id=APjFqb", "id"],
+        ["name=q", "name"],
+        ["css=#APjFqb", "css:finder"],
+        ["xpath=//textarea[@id='APjFqb']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "testing method"
+    }, {
+      "id": "bf009809-3c7f-46f8-a0df-465b188634e5",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=APjFqb",
+      "targets": [
+        ["id=APjFqb", "id"],
+        ["name=q", "name"],
+        ["css=#APjFqb", "css:finder"],
+        ["xpath=//textarea[@id='APjFqb']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "eea493e8-9b5b-4d7c-82ca-9f694b66ef5b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["dcdfa111-9c9c-4601-a43c-95f4d47fccef"]
+  }],
+  "urls": ["https://www.google.com/"],
+  "plugins": []
+}

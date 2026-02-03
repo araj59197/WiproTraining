@@ -1,314 +1,436 @@
 {
-  "id": "482c5b0f-14b9-4ae9-b95a-c02bec34d79e",
+  "id": "lab4-test-suite",
   "version": "2.0",
   "name": "Lab4",
   "url": "https://tutorialsninja.com/demo/",
   "tests": [{
-    "id": "fc06c4be-433c-4700-8649-8fd44dee06d4",
-    "name": "tc004",
+    "id": "tc004-main",
+    "name": "TC004 - Product Search and Cart",
     "commands": [{
-      "id": "5bff8300-0378-4034-8106-b134b66f7155",
-      "comment": "",
+      "id": "1",
+      "comment": "Step 1: Open the URL",
       "command": "open",
-      "target": "https://tutorialsninja.com/demo/",
+      "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "1c53ecf2-75c2-4885-b5d9-2762e6d79c09",
-      "comment": "",
+      "id": "2",
+      "comment": "Set window size",
       "command": "setWindowSize",
-      "target": "1458x696",
+      "target": "1920x1080",
       "targets": [],
       "value": ""
     }, {
-      "id": "4b1885fe-c784-42a1-8881-55ccf6b7d48d",
-      "comment": "",
-      "command": "click",
+      "id": "3",
+      "comment": "Step 2: Verify title of the page",
+      "command": "verifyTitle",
+      "target": "Tutorialsninja",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4",
+      "comment": "Step 3: Go to 'Desktops' tab - Hover to show dropdown",
+      "command": "mouseOver",
       "target": "linkText=Desktops",
       "targets": [
-        ["linkText=Desktops", "linkText"],
-        ["css=.dropdown:nth-child(1) > .dropdown-toggle", "css:finder"],
-        ["xpath=//a[contains(text(),'Desktops')]", "xpath:link"],
-        ["xpath=//nav[@id='menu']/div[2]/ul/li/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://tutorialsninja.com/demo/index.php?route=product/category&path=20')]", "xpath:href"],
-        ["xpath=//nav/div[2]/ul/li/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Desktops')]", "xpath:innerText"]
+        ["linkText=Desktops", "linkText"]
       ],
       "value": ""
     }, {
-      "id": "ffdd153b-24a9-487f-a07c-bc7b8af06c43",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=Qafox.com",
-      "targets": [
-        ["linkText=Qafox.com", "linkText"],
-        ["css=h1 > a", "css:finder"],
-        ["xpath=//a[contains(text(),'Qafox.com')]", "xpath:link"],
-        ["xpath=//div[@id='logo']/h1/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://tutorialsninja.com/demo/index.php?route=common/home')]", "xpath:href"],
-        ["xpath=//h1/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Qafox.com')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "pause-after-home",
-      "comment": "Wait for page to fully load after navigation",
+      "id": "5",
+      "comment": "Pause for dropdown",
       "command": "pause",
-      "target": "2000",
+      "target": "1000",
       "targets": [],
       "value": ""
     }, {
-      "id": "495c4796-c60c-4da1-a015-061ecf87ecf9",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=Desktops",
-      "targets": [
-        ["linkText=Desktops", "linkText"],
-        ["css=.dropdown:nth-child(1) > .dropdown-toggle", "css:finder"],
-        ["xpath=//a[contains(text(),'Desktops')]", "xpath:link"],
-        ["xpath=//nav[@id='menu']/div[2]/ul/li/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://tutorialsninja.com/demo/index.php?route=product/category&path=20')]", "xpath:href"],
-        ["xpath=//nav/div[2]/ul/li/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Desktops')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "1bd31dc3-d825-46e7-8767-f94f30323930",
-      "comment": "",
+      "id": "6",
+      "comment": "Step 4: Click on 'Mac'",
       "command": "click",
       "target": "linkText=Mac (1)",
       "targets": [
-        ["linkText=Mac (1)", "linkText"],
-        ["css=.open li:nth-child(2) > a", "css:finder"],
-        ["xpath=//a[contains(text(),'Mac (1)')]", "xpath:link"],
-        ["xpath=//nav[@id='menu']/div[2]/ul/li/div/div/ul/li[2]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://tutorialsninja.com/demo/index.php?route=product/category&path=20_27')]", "xpath:href"],
-        ["xpath=//li/div/div/ul/li[2]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Mac (1)')]", "xpath:innerText"]
+        ["linkText=Mac (1)", "linkText"]
       ],
       "value": ""
     }, {
-      "id": "pause-after-mac-click",
-      "comment": "Wait for Mac category page to fully load",
-      "command": "pause",
-      "target": "2000",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "wait-for-grid-view",
-      "comment": "Wait for grid view button to be visible",
+      "id": "7",
+      "comment": "Wait for page to load",
       "command": "waitForElementVisible",
-      "target": "id=grid-view",
+      "target": "id=content",
       "targets": [],
-      "value": "5000"
+      "value": "10000"
     }, {
-      "id": "d3208e91-5714-4df5-8f27-da57fbad693f",
-      "comment": "",
+      "id": "8",
+      "comment": "Step 5: Verify the 'Mac' heading",
+      "command": "assertText",
+      "target": "css=h2",
+      "targets": [],
+      "value": "Mac"
+    }, {
+      "id": "9",
+      "comment": "Step 6: Select 'Name(A-Z)' from Sort By dropdown",
       "command": "click",
       "target": "id=input-sort",
-      "targets": [
-        ["id=input-sort", "id"],
-        ["css=#input-sort", "css:finder"],
-        ["xpath=//select[@id='input-sort']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/div/div[3]/div/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
-      "id": "25b02330-6896-4f4f-99fe-00056081f62a",
-      "comment": "",
+      "id": "10",
+      "comment": "Select Name (A - Z)",
       "command": "select",
       "target": "id=input-sort",
       "targets": [],
       "value": "label=Name (A - Z)"
     }, {
-      "id": "pause-after-select",
-      "comment": "Wait for page to reload after sorting selection",
+      "id": "11",
+      "comment": "Wait for sort to apply",
       "command": "pause",
-      "target": "3000",
+      "target": "2000",
       "targets": [],
       "value": ""
     }, {
-      "id": "wait-for-products",
-      "comment": "Wait for product image to be visible after sort",
+      "id": "12",
+      "comment": "Wait for product image",
       "command": "waitForElementVisible",
       "target": "css=.image .img-responsive",
       "targets": [],
       "value": "5000"
     }, {
-      "id": "68e5785b-a104-4740-817c-3484aa77134c",
-      "comment": "",
+      "id": "13",
+      "comment": "Click on product image",
       "command": "click",
       "target": "css=.image .img-responsive",
-      "targets": [
-        ["css=.image .img-responsive", "css:finder"],
-        ["xpath=(//img[@alt='iMac'])[2]", "xpath:img"],
-        ["xpath=//div[@id='content']/div[2]/div/div/div/a/img", "xpath:idRelative"],
-        ["xpath=//div/div[2]/div/div/div/a/img", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "pause-after-product-click",
-      "comment": "Wait for product details page to fully load",
-      "command": "pause",
-      "target": "3000",
       "targets": [],
       "value": ""
     }, {
-      "id": "wait-for-add-to-cart-button",
-      "comment": "Wait for Add to Cart button to be visible",
+      "id": "14",
+      "comment": "Wait for product page",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15",
+      "comment": "Wait for Add to Cart button",
       "command": "waitForElementVisible",
       "target": "id=button-cart",
       "targets": [],
       "value": "5000"
     }, {
-      "id": "8dd0a8e1-9431-4a7a-892f-5b42d68d8e6c",
-      "comment": "",
+      "id": "16",
+      "comment": "Step 7: Click on 'Add to Cart' button",
       "command": "click",
       "target": "id=button-cart",
-      "targets": [
-        ["id=button-cart", "id"],
-        ["css=#button-cart", "css:finder"],
-        ["xpath=//button[@id='button-cart']", "xpath:attributes"],
-        ["xpath=//div[@id='product']/div/button", "xpath:idRelative"],
-        ["xpath=//div[2]/div[2]/div/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Add to Cart')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": ""
     }, {
-      "id": "7890afa5-042f-4ca5-8803-c4a7f8886a90",
-      "comment": "",
+      "id": "17",
+      "comment": "Wait after add to cart",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "18",
+      "comment": "Step 8: Enter 'Monitors' in Search text box",
       "command": "click",
       "target": "name=search",
-      "targets": [
-        ["name=search", "name"],
-        ["css=.input-lg", "css:finder"],
-        ["xpath=//input[@name='search']", "xpath:attributes"],
-        ["xpath=//div[@id='search']/input", "xpath:idRelative"],
-        ["xpath=//div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "f0f464d8-7a79-4bb9-8cca-4ed8d4d843b8",
-      "comment": "",
-      "command": "waitForElementVisible",
-      "target": "name=search",
-      "targets": [],
-      "value": "5000"
-    }, {
-      "id": "61c61aee-98ac-42ea-acbc-5484acc2a6d5",
-      "comment": "",
-      "command": "type",
-      "target": "name=search",
-      "targets": [],
-      "value": "Mobile"
-    }, {
-      "id": "pause-before-search-click",
-      "comment": "Small pause before clicking search button",
-      "command": "pause",
-      "target": "500",
       "targets": [],
       "value": ""
     }, {
-      "id": "d38c5d0c-7647-4fb8-bfa8-185613953d9e",
-      "comment": "",
+      "id": "19",
+      "comment": "Type Monitors",
+      "command": "executeScript",
+      "target": "document.querySelector('input[name=search]').value = 'Monitors'; document.querySelector('input[name=search]').dispatchEvent(new Event('input', {bubbles:true}));",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "20",
+      "comment": "Click Search button",
       "command": "click",
       "target": "css=.fa-search",
-      "targets": [
-        ["css=.fa-search", "css:finder"],
-        ["xpath=//div[@id='search']/span/button/i", "xpath:idRelative"],
-        ["xpath=//span/button/i", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
-      "id": "pause-after-search",
-      "comment": "Wait for search results page to load",
+      "id": "21",
+      "comment": "Step 9: Wait for page to load",
       "command": "pause",
       "target": "3000",
       "targets": [],
       "value": ""
     }, {
-      "id": "wait-for-search-input",
-      "comment": "Wait for search input field to be visible on results page",
+      "id": "22",
+      "comment": "Wait for search results",
       "command": "waitForElementVisible",
-      "target": "name=search",
+      "target": "id=input-search",
       "targets": [],
       "value": "5000"
     }, {
-      "id": "d7a1f66c-a293-46fe-89d4-9a2b099cf175",
-      "comment": "",
-      "command": "click",
-      "target": "name=search",
-      "targets": [
-        ["name=search", "name"],
-        ["css=.input-lg", "css:finder"],
-        ["xpath=//input[@name='search']", "xpath:attributes"],
-        ["xpath=//div[@id='search']/input", "xpath:idRelative"],
-        ["xpath=//div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "81be9978-09eb-466c-9448-4dd7cecda4f3",
-      "comment": "",
+      "id": "23",
+      "comment": "Step 10: Clear the text from Search Criteria text box",
       "command": "click",
       "target": "id=input-search",
-      "targets": [
-        ["id=input-search", "id"],
-        ["css=#input-search", "css:finder"],
-        ["xpath=//input[@id='input-search']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
-      "id": "f68302f1-a895-4aee-a3c9-78ca3f3e24eb",
-      "comment": "",
-      "command": "type",
-      "target": "id=input-search",
-      "targets": [
-        ["id=input-search", "id"],
-        ["css=#input-search", "css:finder"],
-        ["xpath=//input[@id='input-search']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
-      ],
-      "value": "Mobile"
+      "id": "24",
+      "comment": "Clear the search criteria",
+      "command": "executeScript",
+      "target": "document.getElementById('input-search').value = ''",
+      "targets": [],
+      "value": ""
     }, {
-      "id": "8a4a6a8c-8b4a-4514-a6ab-6e6262b30a2d",
-      "comment": "",
+      "id": "25",
+      "comment": "Type Monitors in search criteria",
+      "command": "executeScript",
+      "target": "document.getElementById('input-search').value = 'Monitors'; document.getElementById('input-search').dispatchEvent(new Event('input', {bubbles:true}));",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26",
+      "comment": "Step 11: Click on 'Search in product descriptions' checkbox",
       "command": "click",
       "target": "id=description",
-      "targets": [
-        ["id=description", "id"],
-        ["name=description", "name"],
-        ["css=#description", "css:finder"],
-        ["xpath=//input[@id='description']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/p/label/input", "xpath:idRelative"],
-        ["xpath=//p/label/input", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
-      "id": "65eff3ee-350a-4616-bbf1-fe1a654835b3",
-      "comment": "",
+      "id": "27",
+      "comment": "Click Search button",
       "command": "click",
       "target": "id=button-search",
-      "targets": [
-        ["id=button-search", "id"],
-        ["css=#button-search", "css:finder"],
-        ["xpath=//input[@id='button-search']", "xpath:attributes"],
-        ["xpath=//div[@id='content']/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/input", "xpath:position"]
-      ],
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "28",
+      "comment": "Wait for final results",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "tc004-duplicate",
+    "name": "TC004 Duplicate - Same Flow",
+    "commands": [{
+      "id": "d1",
+      "comment": "Step 1: Open the URL",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2",
+      "comment": "Set window size",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d3",
+      "comment": "Step 2: Verify title of the page",
+      "command": "verifyTitle",
+      "target": "Tutorialsninja",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d3a",
+      "comment": "Wait for page elements to load",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d3b",
+      "comment": "Wait for Desktops link to be visible",
+      "command": "waitForElementVisible",
+      "target": "css=.nav.navbar-nav a",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "d4",
+      "comment": "Step 3: Go to 'Desktops' tab - Hover to show dropdown",
+      "command": "mouseOver",
+      "target": "linkText=Desktops",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d5",
+      "comment": "Pause for dropdown",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d6",
+      "comment": "Step 4: Click on 'Mac'",
+      "command": "click",
+      "target": "linkText=Mac (1)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d7",
+      "comment": "Wait for page to load",
+      "command": "waitForElementVisible",
+      "target": "id=content",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "d8",
+      "comment": "Step 5: Verify the 'Mac' heading",
+      "command": "assertText",
+      "target": "css=h2",
+      "targets": [],
+      "value": "Mac"
+    }, {
+      "id": "d9",
+      "comment": "Step 6: Select 'Name(A-Z)' from Sort By dropdown",
+      "command": "click",
+      "target": "id=input-sort",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d10",
+      "comment": "Select Name (A - Z)",
+      "command": "select",
+      "target": "id=input-sort",
+      "targets": [],
+      "value": "label=Name (A - Z)"
+    }, {
+      "id": "d11",
+      "comment": "Wait for sort to apply",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d12",
+      "comment": "Wait for product image",
+      "command": "waitForElementVisible",
+      "target": "css=.image .img-responsive",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "d13",
+      "comment": "Click on product image",
+      "command": "click",
+      "target": "css=.image .img-responsive",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d14",
+      "comment": "Wait for product page",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d15",
+      "comment": "Wait for Add to Cart button",
+      "command": "waitForElementVisible",
+      "target": "id=button-cart",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "d16",
+      "comment": "Step 7: Click on 'Add to Cart' button",
+      "command": "click",
+      "target": "id=button-cart",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d17",
+      "comment": "Wait after add to cart",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d18",
+      "comment": "Step 8: Enter 'Monitors' in Search text box",
+      "command": "click",
+      "target": "name=search",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d19",
+      "comment": "Type Monitors",
+      "command": "executeScript",
+      "target": "document.querySelector('input[name=search]').value = 'Monitors'; document.querySelector('input[name=search]').dispatchEvent(new Event('input', {bubbles:true}));",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d20",
+      "comment": "Click Search button",
+      "command": "click",
+      "target": "css=.fa-search",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d21",
+      "comment": "Step 9: Wait for page to load",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d22",
+      "comment": "Wait for search results",
+      "command": "waitForElementVisible",
+      "target": "id=input-search",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "d23",
+      "comment": "Step 10: Clear the text from Search Criteria text box",
+      "command": "click",
+      "target": "id=input-search",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d24",
+      "comment": "Clear the search criteria",
+      "command": "executeScript",
+      "target": "document.getElementById('input-search').value = ''",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d25",
+      "comment": "Type Monitors in search criteria",
+      "command": "executeScript",
+      "target": "document.getElementById('input-search').value = 'Monitors'; document.getElementById('input-search').dispatchEvent(new Event('input', {bubbles:true}));",
+      "targets": [],
+      "value": ""
+    }, {
+      "value": "Monitors"
+    }, {
+      "id": "d26",
+      "comment": "Step 11: Click on 'Search in product descriptions' checkbox",
+      "command": "click",
+      "target": "id=description",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d27",
+      "comment": "Click Search button",
+      "command": "click",
+      "target": "id=button-search",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d28",
+      "comment": "Wait for final results",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
       "value": ""
     }]
   }],
   "suites": [{
-    "id": "c78911ad-dbe0-4ec5-8053-ec18a458752b",
-    "name": "Default Suite",
+    "id": "lab4-suite",
+    "name": "Lab4 Test Suite",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["fc06c4be-433c-4700-8649-8fd44dee06d4"]
+    "tests": ["tc004-main", "tc004-duplicate"]
   }],
   "urls": ["https://tutorialsninja.com/demo/"],
   "plugins": []
