@@ -354,7 +354,7 @@
       "id": "d19",
       "comment": "Type Monitors",
       "command": "executeScript",
-      "target": "document.querySelector('input[name=search]').value = 'Monitors'; document.querySelector('input[name=search]').dispatchEvent(new Event('input', {bubbles:true}));",
+      "target": "var elem = document.querySelector('input[name=search]'); if(elem) { elem.value = 'Monitors'; elem.dispatchEvent(new Event('input', {bubbles:true})); }",
       "targets": [],
       "value": ""
     }, {
@@ -396,11 +396,9 @@
       "id": "d25",
       "comment": "Type Monitors in search criteria",
       "command": "executeScript",
-      "target": "document.getElementById('input-search').value = 'Monitors'; document.getElementById('input-search').dispatchEvent(new Event('input', {bubbles:true}));",
+      "target": "var elem = document.getElementById('input-search'); if(elem) { elem.value = 'Monitors'; elem.dispatchEvent(new Event('input', {bubbles:true})); }",
       "targets": [],
       "value": ""
-    }, {
-      "value": "Monitors"
     }, {
       "id": "d26",
       "comment": "Step 11: Click on 'Search in product descriptions' checkbox",
