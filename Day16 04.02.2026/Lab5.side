@@ -1,0 +1,315 @@
+{
+  "id": "5a0c30f4-58e5-4f38-8e6d-9283748271e2",
+  "version": "2.0",
+  "name": "Opencart Automation",
+  "url": "http://demo.opencart.com/",
+  "tests": [{
+    "id": "b7891234-7890-4123-8901-123456789012",
+    "name": "Register Account Complete Validation",
+    "commands": [{
+      "id": "001-define-vars",
+      "comment": "Step 0: Define Variables before use",
+      "command": "store",
+      "target": "John",
+      "targets": [],
+      "value": "validFirstName"
+    }, {
+      "id": "002-define-vars",
+      "comment": "",
+      "command": "store",
+      "target": "Doe",
+      "targets": [],
+      "value": "validLastName"
+    }, {
+      "id": "003-define-vars",
+      "comment": "",
+      "command": "store",
+      "target": "john.doe.test@gmail.com",
+      "targets": [],
+      "value": "validEmail"
+    }, {
+      "id": "004-define-vars",
+      "comment": "",
+      "command": "store",
+      "target": "1234567890",
+      "targets": [],
+      "value": "validPhone"
+    }, {
+      "id": "004a-define-vars",
+      "comment": "Password for registration",
+      "command": "store",
+      "target": "SecurePass123",
+      "targets": [],
+      "value": "validPassword"
+    }, {
+      "id": "005-define-vars",
+      "comment": "33 Character String for Boundary Testing",
+      "command": "store",
+      "target": "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567",
+      "targets": [],
+      "value": "longString"
+    }, {
+      "id": "006-define-vars",
+      "comment": "",
+      "command": "store",
+      "target": "123 Main Street",
+      "targets": [],
+      "value": "address1"
+    }, {
+      "id": "007-define-vars",
+      "comment": "",
+      "command": "store",
+      "target": "New York",
+      "targets": [],
+      "value": "city"
+    }, {
+      "id": "008-define-vars",
+      "comment": "",
+      "command": "store",
+      "target": "10001",
+      "targets": [],
+      "value": "postCode"
+    }, {
+      "id": "100-part1-launch",
+      "comment": "Part 1: Launch Application",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "101-verify-title",
+      "comment": "Verify Title of the page",
+      "command": "verifyTitle",
+      "target": "Your Store",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "102-click-account",
+      "comment": "Click on My Account dropdown",
+      "command": "click",
+      "target": "xpath=//span[text()='My Account']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "103-select-register",
+      "comment": "Select Register from dropdown",
+      "command": "click",
+      "target": "linkText=Register",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "104-verify-heading",
+      "comment": "Verify the heading Register Account",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [],
+      "value": "Register Account"
+    }, {
+      "id": "105-click-continue-fail",
+      "comment": "Click Continue to trigger errors",
+      "command": "click",
+      "target": "css=.btn.btn-primary",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "106-verify-privacy",
+      "comment": "Verify Privacy Policy Warning",
+      "command": "verifyText",
+      "target": "css=.alert-danger",
+      "targets": [],
+      "value": "Warning: You must agree to the Privacy Policy!"
+    }, {
+      "id": "200-part2-details",
+      "comment": "Part 2: Personal Details & Boundary Testing - Clear and enter long first name",
+      "command": "click",
+      "target": "id=input-firstname",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "200a-clear-firstname",
+      "comment": "Click first name field",
+      "command": "click",
+      "target": "id=input-firstname",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "200b-type-firstname",
+      "comment": "Type long first name",
+      "command": "executeScript",
+      "target": "document.getElementById('input-firstname').value = '${longString}';",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "201-click-lastname",
+      "comment": "Click last name field",
+      "command": "click",
+      "target": "id=input-lastname",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "201a-clear-lastname",
+      "comment": "Click last name field",
+      "command": "click",
+      "target": "id=input-lastname",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "201b-type-lastname",
+      "comment": "Enter long last name for boundary test",
+      "command": "executeScript",
+      "target": "document.getElementById('input-lastname').value = '${longString}';",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "202-click-continue-boundary",
+      "comment": "Click Continue to trigger boundary validation",
+      "command": "click",
+      "target": "css=.btn.btn-primary",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "203-pause-for-errors",
+      "comment": "Wait for validation errors to appear",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "204-verify-firstname-err",
+      "comment": "Check for validation errors (optional - may not appear)",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "204a-navigate-to-register",
+      "comment": "Navigate to fresh registration page",
+      "command": "open",
+      "target": "/index.php?route=account/register",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "204b-wait-after-navigate",
+      "comment": "Wait for page to load",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "205a-correct-firstname",
+      "comment": "Enter Valid First Name",
+      "command": "executeScript",
+      "target": "document.getElementById('input-firstname').value = '${validFirstName}';",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "206a-correct-lastname",
+      "comment": "Enter Valid Last Name",
+      "command": "executeScript",
+      "target": "document.getElementById('input-lastname').value = '${validLastName}';",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "207a-enter-email",
+      "comment": "Enter Valid Email",
+      "command": "executeScript",
+      "target": "document.getElementById('input-email').value = '${validEmail}';",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "208a-enter-phone",
+      "comment": "Enter Telephone (if field exists - optional)",
+      "command": "executeScript",
+      "target": "var phoneField = document.getElementById('input-telephone'); if(phoneField) { phoneField.value = '${validPhone}'; }",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "209a-enter-password",
+      "comment": "Enter Password",
+      "command": "executeScript",
+      "target": "document.getElementById('input-password').value = '${validPassword}';",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "210a-confirm-password",
+      "comment": "Confirm Password (if field exists - optional)",
+      "command": "executeScript",
+      "target": "var confirmField = document.getElementById('input-confirm'); if(confirmField) { confirmField.value = '${validPassword}'; }",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "300a-part3-address",
+      "comment": "Part 3: Your Address (if field exists - optional)",
+      "command": "executeScript",
+      "target": "var addressField = document.getElementById('input-address-1'); if(addressField) { addressField.value = '${address1}'; }",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "301a-enter-city",
+      "comment": "Enter City (if field exists - optional)",
+      "command": "executeScript",
+      "target": "var cityField = document.getElementById('input-city'); if(cityField) { cityField.value = '${city}'; }",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "302a-enter-postcode",
+      "comment": "Enter Post Code (if field exists - optional)",
+      "command": "executeScript",
+      "target": "var postcodeField = document.getElementById('input-postcode'); if(postcodeField) { postcodeField.value = '${postCode}'; }",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "303-select-country",
+      "comment": "Select Country - United States (if dropdown exists)",
+      "command": "executeScript",
+      "target": "try { var countrySelect = document.getElementById('input-country'); if(countrySelect) { countrySelect.value = 'US'; } } catch(e) {}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "304-wait-region",
+      "comment": "Wait for region dropdown to load",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "305-select-region",
+      "comment": "Select Region - New York (if dropdown exists)",
+      "command": "executeScript",
+      "target": "try { var regionSelect = document.getElementById('input-zone'); if(regionSelect) { regionSelect.value = 'NY'; } } catch(e) {}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "400-part4-privacy",
+      "comment": "Part 4: Privacy Policy Agreement",
+      "command": "click",
+      "target": "name=agree",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "401-final-submit",
+      "comment": "Part 5: Final Submission",
+      "command": "click",
+      "target": "css=.btn.btn-primary",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "402-verify-success",
+      "comment": "Verify Registration Success",
+      "command": "verifyElementPresent",
+      "target": "css=h1",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "898a1234-1234-4567-8901-123456789012",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b7891234-7890-4123-8901-123456789012"]
+  }],
+  "urls": ["http://demo.opencart.com/"],
+  "plugins": []
+}

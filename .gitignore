@@ -5,3 +5,11 @@ revision.py
 requirement.py
 venv456/
 .vscode/
+
+# Day16 - TutorialsNinja Locator files
+Beautiful_Locator_Validation_Report.xlsx
+create_beautiful_locator_mapping.py
+TutorialsNinja_Registration_Locators_Clean.csv
+validate_beautiful_locators.py
+create_enhanced_locator_mapping.py
+TutorialsNinja_Registration_Locators_Enhanced.csv

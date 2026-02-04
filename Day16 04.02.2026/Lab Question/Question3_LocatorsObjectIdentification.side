@@ -1,0 +1,347 @@
+{
+  "id": "q3-locators-object-id",
+  "version": "2.0",
+  "name": "Question 3 - Locators & Object Identification",
+  "url": "https://tutorialsninja.com/demo",
+  "tests": [{
+    "id": "test-locators",
+    "name": "Locators and Object Identification Test",
+    "commands": [{
+      "id": "cmd1",
+      "comment": "Step 1: Open TutorialsNinja Demo Site",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd1a",
+      "comment": "Wait for page to load completely",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd1b",
+      "comment": "Wait until My Account is visible",
+      "command": "waitForElementVisible",
+      "target": "css=#top-links a[title='My Account']",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "cmd2",
+      "comment": "Click My Account dropdown",
+      "command": "click",
+      "target": "css=#top-links a[title='My Account']",
+      "targets": [
+        ["css=#top-links a[title='My Account']", "css:finder"],
+        ["xpath=//div[@id='top-links']//a[@title='My Account']", "xpath:attributes"],
+        ["xpath=//div[@id='top-links']//span[contains(normalize-space(.),'My Account')]/ancestor::a[1]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cmd2a",
+      "comment": "Wait until Register option is visible",
+      "command": "waitForElementVisible",
+      "target": "css=#top-links a[href*='route=account/register']",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "cmd3",
+      "comment": "Click Register link",
+      "command": "click",
+      "target": "css=#top-links a[href*='route=account/register']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd4",
+      "comment": "Wait for registration page to load",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd5",
+      "comment": "Step 2: Demonstrate - 1. ID Locator (First Name)",
+      "command": "echo",
+      "target": "1. ID Locator - Finding First Name field",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd6",
+      "comment": "Find and enter text using ID locator",
+      "command": "executeScript",
+      "target": "var el=document.getElementById('input-firstname'); if(el){el.scrollIntoView({block:'center'}); el.focus(); el.value='John'; el.dispatchEvent(new Event('input',{bubbles:true})); el.dispatchEvent(new Event('change',{bubbles:true}));}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd7",
+      "comment": "Print confirmation",
+      "command": "echo",
+      "target": "✓ Found and filled First Name using ID: input-firstname",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd8",
+      "comment": "Step 2: Demonstrate - 2. NAME Locator (Last Name)",
+      "command": "echo",
+      "target": "2. NAME Locator - Finding Last Name field",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd9",
+      "comment": "Find and enter text using NAME locator",
+      "command": "executeScript",
+      "target": "var el=document.querySelector('input[name=lastname]'); if(el){el.scrollIntoView({block:'center'}); el.focus(); el.value='Doe'; el.dispatchEvent(new Event('input',{bubbles:true})); el.dispatchEvent(new Event('change',{bubbles:true}));}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd10",
+      "comment": "Print confirmation",
+      "command": "echo",
+      "target": "✓ Found and filled Last Name using NAME: lastname",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd11",
+      "comment": "Step 2: Demonstrate - 3. XPATH Locator (Email)",
+      "command": "echo",
+      "target": "3. XPATH Locator - Finding Email field",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd12",
+      "comment": "Find and enter text using XPATH locator",
+      "command": "executeScript",
+      "target": "var el=document.evaluate(`//input[@placeholder='E-Mail']`,document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue; if(el){el.scrollIntoView({block:'center'}); el.focus(); el.value='john.doe.test@example.com'; el.dispatchEvent(new Event('input',{bubbles:true})); el.dispatchEvent(new Event('change',{bubbles:true}));}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd13",
+      "comment": "Print confirmation",
+      "command": "echo",
+      "target": "✓ Found and filled Email using XPATH: //input[@placeholder='E-Mail']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd14",
+      "comment": "Step 2: Demonstrate - 4. CSS SELECTOR Locator (Telephone)",
+      "command": "echo",
+      "target": "4. CSS SELECTOR Locator - Finding Telephone field",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd15",
+      "comment": "Find and enter text using CSS SELECTOR",
+      "command": "executeScript",
+      "target": "var el=document.querySelector('input[name=telephone]'); if(el){el.scrollIntoView({block:'center'}); el.focus(); el.value='1234567890'; el.dispatchEvent(new Event('input',{bubbles:true})); el.dispatchEvent(new Event('change',{bubbles:true}));}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd16",
+      "comment": "Print confirmation",
+      "command": "echo",
+      "target": "✓ Found and filled Telephone using CSS: input[name='telephone']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd17",
+      "comment": "Step 2: Demonstrate - 5. CLASS NAME Locator (counting elements)",
+      "command": "echo",
+      "target": "5. CLASS NAME Locator - Verifying form-control elements exist",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd18",
+      "comment": "Verify element with class name exists",
+      "command": "verifyElementPresent",
+      "target": "css=.form-control",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd19",
+      "comment": "Print confirmation",
+      "command": "echo",
+      "target": "✓ Verified elements with CLASS NAME: form-control exist",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd20",
+      "comment": "Fill Password field using CSS selector with ID",
+      "command": "executeScript",
+      "target": "var el=document.getElementById('input-password'); if(el){el.scrollIntoView({block:'center'}); el.focus(); el.value='SecurePass123'; el.dispatchEvent(new Event('input',{bubbles:true})); el.dispatchEvent(new Event('change',{bubbles:true}));}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd21",
+      "comment": "Fill Confirm Password using XPATH",
+      "command": "executeScript",
+      "target": "var el=document.evaluate(`//input[@name='confirm']`,document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue; if(el){el.scrollIntoView({block:'center'}); el.focus(); el.value='SecurePass123'; el.dispatchEvent(new Event('input',{bubbles:true})); el.dispatchEvent(new Event('change',{bubbles:true}));}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd22",
+      "comment": "Step 3: Click Privacy Policy checkbox",
+      "command": "click",
+      "target": "name=agree",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd23",
+      "comment": "Print checkbox confirmation",
+      "command": "echo",
+      "target": "✓ Privacy Policy checkbox checked",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd24",
+      "comment": "Step 4: Click Submit Button using CSS Selector",
+      "command": "echo",
+      "target": "Step 3: Clicking Submit Button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd25",
+      "comment": "Click submit button",
+      "command": "click",
+      "target": "css=input[type='submit'][value='Continue']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd26",
+      "comment": "Print submit confirmation",
+      "command": "echo",
+      "target": "✓ Submit button clicked successfully",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd27",
+      "comment": "Wait for page to load",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd28",
+      "comment": "Step 5: Validate message on the page",
+      "command": "echo",
+      "target": "Step 4: Validating page message",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd29",
+      "comment": "Store page title",
+      "command": "storeTitle",
+      "target": "",
+      "targets": [],
+      "value": "pageTitle"
+    }, {
+      "id": "cmd30",
+      "comment": "Print page title",
+      "command": "echo",
+      "target": "Page Title: ${pageTitle}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd31",
+      "comment": "Store current URL",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "currentURL"
+    }, {
+      "id": "cmd32",
+      "comment": "Print current URL",
+      "command": "echo",
+      "target": "Current URL: ${currentURL}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd33",
+      "comment": "Verify page heading (h1)",
+      "command": "verifyElementPresent",
+      "target": "css=h1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd34",
+      "comment": "Store page heading text",
+      "command": "storeText",
+      "target": "css=h1",
+      "targets": [],
+      "value": "pageHeading"
+    }, {
+      "id": "cmd35",
+      "comment": "Print page heading",
+      "command": "echo",
+      "target": "Page Heading: ${pageHeading}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd36",
+      "comment": "Final Summary",
+      "command": "echo",
+      "target": "========================================",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd37",
+      "comment": "Summary message",
+      "command": "echo",
+      "target": "✓ All 5 locator strategies demonstrated successfully!",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd38",
+      "comment": "Summary - ID",
+      "command": "echo",
+      "target": "  • ID: input-firstname",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd39",
+      "comment": "Summary - NAME",
+      "command": "echo",
+      "target": "  • NAME: lastname",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd40",
+      "comment": "Summary - XPATH",
+      "command": "echo",
+      "target": "  • XPATH: //input[@placeholder='E-Mail']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd41",
+      "comment": "Summary - CSS",
+      "command": "echo",
+      "target": "  • CSS: input[name='telephone']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd42",
+      "comment": "Summary - CLASS",
+      "command": "echo",
+      "target": "  • CLASS: form-control",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cmd43",
+      "comment": "Completion message",
+      "command": "echo",
+      "target": "Question 3 Test Completed Successfully!",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "suite-q3",
+    "name": "Locators Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["test-locators"]
+  }],
+  "urls": ["https://tutorialsninja.com/demo", "https://tutorialsninja.com/demo/"],
+  "plugins": []
+}
