@@ -78,9 +78,9 @@ def test_locators_and_validation():
         
         # Test data
         test_data = {
-            "first_name": "John",
-            "last_name": "Doe",
-            "email": "john.doe.test@example.com",
+            "first_name": "Aditya",
+            "last_name": "Raj",
+            "email": "Aditya@gmail.com",
             "telephone": "1234567890",
             "password": "SecurePass123"
         }
@@ -96,11 +96,11 @@ def test_locators_and_validation():
         
         email_field.clear()
         email_field.send_keys(test_data["email"])
-        print("Entered email in Email field (XPATH locator)")
+        print(f"Entered '{test_data['email']}' in Email field (XPATH locator)")
         
         telephone_field.clear()
         telephone_field.send_keys(test_data["telephone"])
-        print("Entered telephone in Telephone field (CSS locator)")
+        print(f"Entered '{test_data['telephone']}' in Telephone field (CSS locator)")
         
         # Password fields using different locators
         password_field = driver.find_element(By.CSS_SELECTOR, "input#input-password")
@@ -110,7 +110,7 @@ def test_locators_and_validation():
         confirm_password_field = driver.find_element(By.XPATH, "//input[@name='confirm']")
         confirm_password_field.clear()
         confirm_password_field.send_keys(test_data["password"])
-        print("Password fields filled")
+        print(f"Entered '{test_data['password']}' in Password fields")
         
         # Check privacy policy checkbox
         privacy_checkbox = driver.find_element(By.NAME, "agree")
