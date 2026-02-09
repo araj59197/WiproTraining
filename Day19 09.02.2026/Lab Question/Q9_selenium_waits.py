@@ -38,6 +38,7 @@ def demonstrate_implicit_wait():
     print("\n" + "=" * 60)
     print("1. IMPLICIT WAIT DEMONSTRATION")
     print("=" * 60)
+    time.sleep(2)
 
     driver = setup_driver()
 
@@ -63,6 +64,7 @@ def demonstrate_implicit_wait():
         print(f"Element found after {end_time - start_time:.2f} seconds")
         print(f"MESSAGE: Element with ID 'box0' is NOW AVAILABLE for interaction!")
         print(f"Element text/class: {dynamic_element.get_attribute('class')}")
+        time.sleep(3)
 
     except NoSuchElementException as e:
         print(f"Element not found within implicit wait time: {e}")
@@ -84,6 +86,7 @@ def demonstrate_explicit_wait():
     print("\n" + "=" * 60)
     print("2. EXPLICIT WAIT DEMONSTRATION (Element Clickable)")
     print("=" * 60)
+    time.sleep(2)
 
     driver = setup_driver()
 
@@ -110,6 +113,7 @@ def demonstrate_explicit_wait():
         # Interact with the element
         revealed_input.send_keys("Hello Selenium!")
         print("Successfully typed text into the revealed input field")
+        time.sleep(3)
 
     except TimeoutException:
         print("Timeout: Element did not become clickable within 10 seconds")
@@ -132,6 +136,7 @@ def demonstrate_fluent_wait():
     print("\n" + "=" * 60)
     print("3. FLUENT WAIT DEMONSTRATION (With Polling Interval)")
     print("=" * 60)
+    time.sleep(2)
 
     driver = setup_driver()
 
@@ -185,6 +190,7 @@ def demonstrate_fluent_wait():
         # Interact with the element
         dynamic_element.click()
         print("Successfully clicked the dynamic element")
+        time.sleep(3)
 
     except TimeoutException:
         print("Timeout: Element did not appear within 15 seconds")
@@ -222,6 +228,7 @@ def print_wait_comparison():
       - Best for complex scenarios
     """
     print(comparison)
+    time.sleep(3)
 
 
 # ============================================
