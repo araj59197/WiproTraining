@@ -1,16 +1,25 @@
-venv/
-.venv/
-env/
-revision.py
-requirement.py
-venv456/
-.vscode/
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.pyo
 
-# Day16 - TutorialsNinja Locator files
-Beautiful_Locator_Validation_Report.xlsx
-create_beautiful_locator_mapping.py
-TutorialsNinja_Registration_Locators_Clean.csv
-validate_beautiful_locators.py
-create_enhanced_locator_mapping.py
-TutorialsNinja_Registration_Locators_Enhanced.csv
-Lab6.py
+# Virtual environment
+venv/
+venv456/
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Test outputs
+.pytest_cache/
+*.html
+output.xml
+log.html
+report.html
+
+# OS
+.DS_Store
+Thumbs.db

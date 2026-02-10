@@ -72,10 +72,6 @@ def demonstrate_implicit_wait():
         driver.quit()
         print("Browser closed")
 
-
-# ============================================
-# 2. EXPLICIT WAIT DEMONSTRATION
-# ============================================
 def demonstrate_explicit_wait():
     """
     Explicit Wait:
@@ -121,10 +117,6 @@ def demonstrate_explicit_wait():
         driver.quit()
         print("Browser closed")
 
-
-# ============================================
-# 3. FLUENT WAIT DEMONSTRATION
-# ============================================
 def demonstrate_fluent_wait():
     """
     Fluent Wait:
@@ -149,10 +141,7 @@ def demonstrate_fluent_wait():
         add_button.click()
         print("Clicked 'Add a box!' button")
 
-        # Create Fluent Wait with:
-        # - Maximum timeout: 15 seconds
-        # - Polling interval: 500 milliseconds (checks every 0.5 seconds)
-        # - Ignores NoSuchElementException during polling
+
         fluent_wait = WebDriverWait(
             driver,
             timeout=15,
@@ -230,10 +219,6 @@ def print_wait_comparison():
     print(comparison)
     time.sleep(3)
 
-
-# ============================================
-# MAIN EXECUTION
-# ============================================
 if __name__ == "__main__":
     print("\n" + "*" * 60)
     print("SELENIUM WAITS DEMONSTRATION")

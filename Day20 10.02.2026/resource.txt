@@ -1,0 +1,114 @@
+
+ from selenium import webdriver
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.edge.options import Options as EdgeOptions
+ 
+GRID_URL = "http://localhost:4444"
+ 
+def get_driver(browser):
+    if browser == "chrome":
+        options = ChromeOptions()
+        # Advanced Stealth: Disabling features Google uses for fingerprinting
+        options.add_argument("--disable-blink-features=AutomationControlled")
+        options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        options.add_experimental_option("useAutomationExtension", False)
+        # Use a real user-agent
+        options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36")
+       
+    elif browser == "edge":
+        options = EdgeOptions()
+        options.add_argument("--disable-blink-features=AutomationControlled")
+        options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        options.add_experimental_option("useAutomationExtension", False)
+        options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edg/121.0.0.0")
+   
+    else:
+        raise ValueError(f"Browser '{browser}' not supported")
+ 
+    driver = webdriver.Remote(command_executor=GRID_URL, options=options)
+ 
+    # CDP Injection to wipe the 'webdriver' property from the browser context
+    driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
+        "source": """
+            Object.defineProperty(navigator, 'webdriver', {
+                get: () => undefined
+            })
+        """
+    })
+   
+    driver.maximize_window()
+    return driver
+
+from selenium import webdriver  from selenium.webdriver.chrome.options import Options as ChromeOptions  from selenium.webdriver.edge.options import Options as EdgeOptions     GRID_URL = "http://localhost:4444"     def get_driver(browser):   if browser == "chrome":   options = ChromeOptions()       …
+driverfactory.py
+ 
+import pytest
+import time
+import random
+import logging
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from driverfactory import get_driver
+ 
+# Logging to both terminal and test_log.txt
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("test_log.txt", mode='w'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger()
+ 
+@pytest.mark.parametrize("browser", ["chrome", "edge"])
+def test_google_title(browser):
+    logger.info(f"STARTING: Title Test on {browser}")
+    driver = get_driver(browser)
+    try:
+        driver.get("https://www.google.com")
+        time.sleep(1) # Reduced wait
+        assert "Google" in driver.title
+        driver.save_screenshot(f"Title_{browser}.png")
+        logger.info(f"SUCCESS: {browser} Title verified.")
+    finally:
+        driver.quit()
+ 
+@pytest.mark.parametrize("browser", ["chrome", "edge"])
+def test_google_search(browser):
+    logger.info(f"STARTING: Search Test on {browser}")
+    driver = get_driver(browser)
+    wait = WebDriverWait(driver, 10) # Reduced from 20 to 10
+    try:
+        driver.get("https://www.google.com")
+       
+        # Fast Cookie Consent check
+        try:
+            consent = WebDriverWait(driver, 2).until(EC.element_to_be_clickable((By.ID, "L2AGLb")))
+            consent.click()
+        except:
+            pass
+ 
+        search_box = wait.until(EC.element_to_be_clickable((By.NAME, "q")))
+        query = "Selenium Grid tutorial"
+       
+        # Reduced typing delay to 0.05s for speed
+        for char in query:
+            search_box.send_keys(char)
+            time.sleep(0.05)
+           
+        search_box.submit()
+       
+        wait.until(EC.title_contains("Selenium Grid"))
+        assert "Selenium Grid" in driver.title
+        driver.save_screenshot(f"Search_{browser}.png")
+        logger.info(f"SUCCESS: {browser} Search verified.")
+       
+    except Exception as e:
+        logger.error(f"FAILED: {browser} Error: {e}")
+        driver.save_screenshot(f"Error_{browser}.png")
+        raise e
+    finally:
+        driver.quit()
+ 
