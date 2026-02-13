@@ -46,12 +46,17 @@ def search_restaurants():
     location = request.args.get('location', '').lower()
     dish = request.args.get('dish', '').lower()
     min_rating = request.args.get('rating', type=float)
+    include_unapproved = request.args.get('include_unapproved', 'false').lower() == 'true'
     
     results = []
     
     for restaurant in data_store.restaurants.values():
-        # Skip disabled or unapproved restaurants
-        if not restaurant['enabled'] or not restaurant['approved']:
+        # Skip disabled restaurants (always)
+        if not restaurant['enabled']:
+            continue
+        
+        # Skip unapproved restaurants unless include_unapproved=true
+        if not include_unapproved and not restaurant['approved']:
             continue
         
         # Filter by name
@@ -62,15 +67,17 @@ def search_restaurants():
         if location and location not in restaurant['location'].lower():
             continue
         
+        # Get all dishes for this restaurant
+        restaurant_dishes = [d for d in data_store.dishes.values() 
+                            if d['restaurant_id'] == restaurant['id']]
+        
         # Filter by dish
         if dish:
-            restaurant_dishes = [d for d in data_store.dishes.values() 
-                                if d['restaurant_id'] == restaurant['id']]
             has_dish = any(dish in d['name'].lower() for d in restaurant_dishes)
             if not has_dish:
                 continue
         
-        # Calculate average rating (simplified)
+        # Calculate average rating and get all ratings
         restaurant_ratings = [r for r in data_store.ratings.values() 
                             if data_store.orders.get(r['order_id'], {}).get('restaurant_id') == restaurant['id']]
         
@@ -83,11 +90,43 @@ def search_restaurants():
         if min_rating and avg_rating < min_rating:
             continue
         
-        result = restaurant.copy()
-        result['average_rating'] = avg_rating
+        # Build detailed result
+        result = {
+            "id": restaurant['id'],
+            "name": restaurant['name'],
+            "category": restaurant['category'],
+            "location": restaurant['location'],
+            "contact": restaurant['contact'],
+            "images": restaurant.get('images', []),
+            "average_rating": round(avg_rating, 2),
+            "total_ratings": len(restaurant_ratings),
+            "dishes": [
+                {
+                    "id": d['id'],
+                    "name": d['name'],
+                    "type": d['type'],
+                    "price": d['price'],
+                    "available_time": d.get('available_time', 'All day'),
+                    "image": d.get('image', ''),
+                    "enabled": d.get('enabled', True)
+                }
+                for d in restaurant_dishes
+            ],
+            "total_dishes": len(restaurant_dishes),
+            "recent_ratings": [
+                {
+                    "rating": r['rating'],
+                    "comment": r.get('comment', '')
+                }
+                for r in restaurant_ratings[:5]  # Show last 5 ratings
+            ]
+        }
         results.append(result)
     
-    return jsonify(results), 200
+    return jsonify({
+        "restaurants": results,
+        "count": len(results)
+    }), 200
 
 
 @user_bp.route('/api/v1/orders', methods=['POST'])

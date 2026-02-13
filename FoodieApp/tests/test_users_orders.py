@@ -11,13 +11,13 @@ BASE_URL = "http://localhost:5000"
 def test_register_user():
     """Test user registration"""
     data = {
-        "name": "John Doe",
-        "email": "john@example.com",
+        "name": "Aditya",
+        "email": "aditya@gmail.com",
         "password": "password123"
     }
     response = requests.post(f"{BASE_URL}/api/v1/users/register", json=data)
     assert response.status_code == 201
-    assert response.json()['email'] == "john@example.com"
+    assert response.json()['email'] == "aditya@gmail.com"
     assert 'password' not in response.json()  # Password should not be returned
 
 
@@ -42,7 +42,10 @@ def test_search_restaurants():
     # Search by location
     response = requests.get(f"{BASE_URL}/api/v1/restaurants/search?location=Mumbai")
     assert response.status_code == 200
-    assert isinstance(response.json(), list)
+    data = response.json()
+    assert isinstance(data, dict)
+    assert "restaurants" in data
+    assert isinstance(data["restaurants"], list)
 
 
 def test_place_order():
