@@ -1,0 +1,12 @@
+PYTEST EXECUTION LOG
+Started: Mon Feb 23 14:23:35 2026
+====================
+PASS: tests/test_app.py::TestNopCommerce::test_01_nav_reg[setup0]
+PASS: tests/test_app.py::TestNopCommerce::test_02_reg_user[setup0]
+PASS: tests/test_app.py::TestNopCommerce::test_03_search_1[setup0]
+PASS: tests/test_app.py::TestNopCommerce::test_04_search_2[setup0]
+PASS: tests/test_app.py::TestNopCommerce::test_05_search_3[setup0]
+PASS: tests/test_app.py::TestNopCommerce::test_06_verify_apple[setup0]
+PASS: tests/test_app.py::TestNopCommerce::test_07_nav_computers[setup0]
+PASS: tests/test_app.py::TestNopCommerce::test_08_nav_notebooks[setup0]
+PASS: tests/test_app.py::TestNopCommerce::test_09_switch_euro[setup0]

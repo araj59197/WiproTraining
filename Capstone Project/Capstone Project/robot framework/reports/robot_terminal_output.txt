@@ -1,0 +1,31 @@
+ROBOT EXECUTION LOG
+============================
+PASS: TC_01 Register Navigation
+PASS: TC_02 Register User
+PASS: TC_03 Search Query 1
+PASS: TC_04 Search Query 2
+FAIL: TC_05 Search Query 3
+PASS: TC_06 Verify Apple Search
+PASS: TC_07 Nav Computers
+PASS: TC_08 Nav Notebooks
+FAIL: TC_09 Switch Euro
+FAIL: TC_10 Switch Dollar
+PASS: TC_11 Sort Price Low to High
+PASS: TC_12 Change Display Size
+FAIL: TC_13 Add Wishlist
+PASS: TC_14 View Wishlist
+PASS: TC_15 Add to Cart
+PASS: TC_16 View Shopping Cart
+PASS: TC_17 Update Quantity
+PASS: TC_18 Verify Subtotal
+PASS: TC_19 Remove from Cart
+PASS: TC_20 Footer Sitemap
+PASS: TC_21 Footer Shipping
+PASS: TC_22 Footer Privacy
+PASS: TC_23 Footer About
+PASS: TC_24 Footer Contact
+PASS: TC_25 Logout Session
+
+[ROBOT EXECUTION END] SOME TESTS FAILED
+
+[ROBOT EXECUTION END] SOME TESTS FAILED

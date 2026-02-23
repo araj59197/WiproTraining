@@ -1,0 +1,13 @@
+parameter,value
+base_url,https://demo.nopcommerce.com
+first_name,Jane
+last_name,Smith
+password,Test@456
+search_query_1,MacBook
+search_query_2,Lenovo
+search_query_3,Nike
+search_verify,Apple
+cart_qty,2
+currency,Euro
+currency_symbol,€
+digital_product,night-visions
