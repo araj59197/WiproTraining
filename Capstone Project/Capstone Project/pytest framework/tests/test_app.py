@@ -214,7 +214,8 @@ class TestNopCommerce:
         home.nav_to_register()
         WebDriverWait(self.driver, 10).until(EC.title_contains("Register"))
         home.capture_screenshot("01_Register_Page")
-        assert "Register" in self.driver.title, f"Expected 'Register' in title, got: {self.driver.title}"
+        # Intentionally wrong assertion to demonstrate a test failure
+        assert "Login" in self.driver.title, f"Expected 'Login' in title, got: {self.driver.title}"
 
     def test_02_reg_user(self):
         """Register a new user and verify success message."""

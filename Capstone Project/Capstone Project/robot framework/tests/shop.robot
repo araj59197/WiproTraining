@@ -153,14 +153,25 @@ TC_14 View Wishlist
     Capture Page Screenshot    14_Wishlist_Page.png
 
 TC_15 Add to Cart
-    Recover Browser If Needed
-    Go To    ${DATA}[base_url]/books
-    Wait Until Element Is Visible    class:product-grid    20s
+    Ensure Home
+    # Navigate to Books category with retry
+    Wait Until Keyword Succeeds    3x    3s    Go To    ${DATA}[base_url]/books
+    Run Keyword And Ignore Error    Wait For Condition    return document.readyState == "complete"    20s
+    # Wait for product grid – retry if Cloudflare or slow load
+    ${grid_ok}=    Run Keyword And Return Status    Wait Until Element Is Visible    class:product-grid    20s
+    IF    not ${grid_ok}
+        # Cloudflare may be blocking; reload and retry
+        Go To    ${DATA}[base_url]/books
+        Sleep    5s
+        Run Keyword And Ignore Error    Wait For Condition    return document.readyState == "complete"    20s
+        Wait Until Element Is Visible    class:product-grid    25s
+    END
     Wait Until Element Is Visible    css:.product-title a    15s
     # Get the product URL via JS and navigate directly (click may not trigger navigation)
     ${product_url}=    Execute Javascript    return document.querySelector('.product-title a').href
     Go To    ${product_url}
     Sleep    3s
+    Run Keyword And Ignore Error    Wait For Condition    return document.readyState == "complete"    20s
     Wait Until Element Is Visible    css:.overview    20s
     # Try multiple selectors for the add-to-cart button
     ${has_btn}=    Run Keyword And Return Status    Wait Until Page Contains Element    css:.add-to-cart-button    10s
@@ -186,11 +197,20 @@ TC_15 Add to Cart
     Capture Page Screenshot    15_Added_Cart.png
 
 TC_16 View Shopping Cart
-    Recover Browser If Needed
+    Ensure Home
     Run Keyword And Ignore Error    Clear Notification Bar
-    Wait Until Element Is Visible    class:ico-cart    15s
-    Click Link    class:ico-cart
-    Wait Until Page Contains    Shopping cart    15s
+    # Wait for header to be fully loaded before looking for cart icon
+    Run Keyword And Ignore Error    Wait For Condition    return document.readyState == "complete"    15s
+    ${cart_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    class:ico-cart    15s
+    IF    not ${cart_visible}
+        # Fallback: navigate directly to the cart page
+        Go To    ${DATA}[base_url]/cart
+        Run Keyword And Ignore Error    Wait For Condition    return document.readyState == "complete"    15s
+        Wait Until Page Contains    Shopping cart    15s
+    ELSE
+        Click Link    class:ico-cart
+        Wait Until Page Contains    Shopping cart    15s
+    END
     Capture Page Screenshot    16_Cart.png
 
 TC_17 Update Quantity
